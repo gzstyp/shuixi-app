@@ -38,8 +38,8 @@
 			},
 			{
 				"pagePath":"pages/profile/profile",
-				"iconPath":"./static/tab/order_normal.png",
-				"selectedIconPath":"static/tab/order_select.png",
+				"iconPath":"./static/tab/profile_normal.png",
+				"selectedIconPath":"static/tab/profile_select.png",
 				"text":"水西天香"
 			},
 			{
