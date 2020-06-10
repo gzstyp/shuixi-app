@@ -60,7 +60,10 @@
 	.prefer-content{
 		margin: 30rpx 0;
 		border-radius: 20rpx;
-		background:#F5F5F5;
+		/* background:#F5F5F5; */
+		border-color: #FAA70D;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(254,184,43, 0.6);
+		outline: 0 none;
 	}
 	.combo{
 		margin-bottom: 20rpx;
