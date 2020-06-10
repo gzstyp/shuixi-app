@@ -11,10 +11,10 @@
 <!-- 父组件调用子组件(即组件的)的方法 showForm(),也就是 组件的 methods.showForm();其中的 goodsForm 是上面定义的 ref="goodsForm" -->
 <script>
 	//1.导入子组件
-	import search from './components/search.vue';
-	import banner from './components/banner.vue';
-	import category from './components/category.vue';
-	import optimization from './components/optimization.vue';
+	import search from './views/search.vue';
+	import banner from './views/banner.vue';
+	import category from './views/category.vue';
+	import optimization from './views/optimization.vue';
 	//引入接口url,大括号{}接收变量
 	import {httpReq} from '../../api/httpReq.js';
 	import {urls} from '../../api/urls.js';

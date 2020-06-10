@@ -1,8 +1,9 @@
 <template>
 	<view class="prefer-content">
 		<view class="combo">
-			<image src="../../../static/images/combo.png"></image>
+			<image src="../../../static/images/combo.png"/>
 			<text class="prefer-title">优选套餐</text>
+			<image src="../../../static/images/next_normal.svg" mode="widthFix" class="combo-right" @click="comboMore()"/>
 		</view>
 		<scroll-view scroll-x="true" class="scroll" scroll-with-animation="true">
 			<view class="prefer-dis">
@@ -45,6 +46,9 @@
 			}
 		},
 		methods:{
+			comboMore : function(){
+				
+			}
 		},
 		created(){
 		}
@@ -52,13 +56,30 @@
 </script>
 
 <style>
-	.prefer-content{margin: 30rpx 0;}
+	.prefer-content{
+		margin: 30rpx 0;
+		border-radius: 20rpx;
+		background:#F5F5F5;
+	}
 	.combo{
 		margin-bottom: 20rpx;
+		padding-top:16rpx;
+		margin-left: 14rpx;
+		position: relative;
 	}
 	.combo image{
 		width: 29rpx;
 		height: 35rpx;
+	}
+	.combo-right{
+		width:64rpx;
+		height:64rpx;
+		margin-bottom:-4rpx;
+		justify-content: flex-end;
+		flex-grow: 5;
+		position: absolute;
+		top:24rpx;
+		right: 20rpx;
 	}
 	.combo .prefer-title{
 		font-size: 34rpx;

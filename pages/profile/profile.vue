@@ -1,12 +1,12 @@
 <template>
-	<banner></banner>
+	<slideshow></slideshow>
 </template>
 
 <script>
-	import banner from './components/banner.vue';
+	import slideshow from './views/slideshow.vue';
 	export default {
 		components : {
-			banner,
+			slideshow
 		}
 	}
 </script>

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+	import {hints} from '../../../api/hints.js';
 	export default {
 		data() {
 			return {
@@ -16,7 +17,7 @@
 		},
 		methods:{
 			search : function(){
-				
+				hints.success('搜索');
 			}
 		}
 	}
@@ -49,7 +50,7 @@
 		height: 70rpx;
 		line-height: 70rpx;
 		width: 100%;
-		font-size: 25rpx;
+		font-size: 32rpx;
 		padding-left: 10rpx;
 		color: #666666;
 	}
