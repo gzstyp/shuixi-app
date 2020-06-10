@@ -1,7 +1,7 @@
 <template>
 	<view class="prefer-content">
 		<view class="combo">
-			<image class="combo-left" src="../../../static/images/combo.png"/>
+			<image class="combo-left" src="../../../static/images/icon_combo.png"/>
 			<text class="prefer-title">优选套餐</text>
 			<image src="../../../static/images/next_normal.svg" mode="widthFix" class="combo-right" @click="comboMore()"/>
 		</view>
