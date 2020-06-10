@@ -9,7 +9,7 @@
 		<!-- 自定义轮播 -->
 		<!-- <view>
 			<swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="5000" :duration="500">
-				<block v-for="(item,index) in lable" key="index">
+				<block v-for="(item,index) in lable" :key="index">
 					<swiper-item>
 						<block v-for="(listData,index) in item" key="index">
 						<view>
@@ -23,7 +23,7 @@
 		</view> -->
 		<view class="swiper-view">
 			<swiper :indicator-dots="false" :autoplay="true" :interval="2000" :duration="1000" @change="bannerFun">
-				<block v-for="(item,index) in lable" key="index">
+				<block v-for="(item,index) in lable" :key="index">
 					<swiper-item>
 						<view class="swiper-item">
 							<block v-for="(listData,index) in item" key="index">

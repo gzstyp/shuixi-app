@@ -1,7 +1,7 @@
 <template>
 	<view class="swiper-view">
 		<swiper :indicator-dots="false" :autoplay="true" :interval="2000" :duration="1000" @change="bannerFun">
-			<block v-for="(item,index) in bannerList" key="index">
+			<block v-for="(item,index) in bannerList" :key="index">
 				<swiper-item>
 					<image :src="item.image" mode="widthFix" class="uploadimg"/>
 				</swiper-item>
