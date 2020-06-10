@@ -1,8 +1,8 @@
 <template>
 	<view class="prefer-content">
 		<view class="combo">
-			<image class="combo-left" src="../../../static/images/combo.png"/>
-			<text class="prefer-title">优选套餐</text>
+			<image class="combo-left" src="../../../static/images/choiceness.png"/>
+			<text class="prefer-title">厨师精选</text>
 			<image src="../../../static/images/next_normal.svg" mode="widthFix" class="combo-right" @click="comboMore()"/>
 		</view>
 		<scroll-view scroll-x="true" class="scroll" scroll-with-animation="true">
@@ -28,20 +28,19 @@
 			return {
 				preferData : [
 					{
-						"name":"红烧肉(1-2套餐)",
-						"image":"../../static/images/scroll-view-01.png"
+						"kid":"100001",
+						"name":"澳洲牛排",
+						"image":"../../static/images/index/choiceness1.png"
 					},
 					{
-						"name":"红烧狮子头(3-5人套餐)",
-						"image":"../../static/images/scroll-view-02.png"
+						"kid":"100002",
+						"name":"哈萨里披萨",
+						"image":"../../static/images/index/choiceness2.png"
 					},
 					{
-						"name":"清蒸鲈鱼(3-5人套餐)",
-						"image":"../../static/images/scroll-view-03.png"
-					},
-					{
-						"name":"剁椒鱼头(4-7人套餐)",
-						"image":"../../static/images/scroll-view-04.png"
+						"kid":"100003",
+						"name":"清蒸大闸蟹",
+						"image":"../../static/images/index/choiceness3.png"
 					}
 				]
 			}
@@ -83,7 +82,7 @@
 		right: 20rpx;
 	}
 	.combo .prefer-title{
-		font-size:36rpx;
+		font-size: 36rpx;
 		height: 50rpx;
 		line-height: 50rpx;
 		margin-left: 10rpx;

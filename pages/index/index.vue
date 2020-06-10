@@ -5,6 +5,7 @@
 		 <banner></banner>
 		 <category></category>
 		 <optimization :preferListData="listPreferData"></optimization>
+		 <choiceness :preferListData="listPreferData"></choiceness>
 	</view>
 </template>
 <!-- 父组件向子组件传递数据，是通过:Xxx="数据" ,子组件接收方是通过 props:{ 数据 : null } -->
@@ -15,6 +16,7 @@
 	import banner from './views/banner.vue';
 	import category from './views/category.vue';
 	import optimization from './views/optimization.vue';
+	import choiceness from './views/choiceness.vue';
 	//引入接口url,大括号{}接收变量
 	import {httpReq} from '../../api/httpReq.js';
 	import {urls} from '../../api/urls.js';
@@ -25,6 +27,7 @@
 			banner,
 			category,
 			optimization,
+			choiceness
 		},
 		/* 一般情况下,是在父组件获取数据再传到子组件!!!???父组件给子组件传值!!!,所以把请求放在父组件来 */
 		data () {
