@@ -15,7 +15,7 @@
 			</uni-grid>
 		</view>
 		<uni-section title="热门推荐" style="color: #007AFF;" type="line"></uni-section>
-		
+		<remen></remen>
 	</view>
 </template>
 
@@ -25,13 +25,15 @@
 	import uniGrid from '@/components/uni-grid/uni-grid.vue'
 	import uniGridItem from '@/components/uni-grid-item/uni-grid-item.vue'
 	import uniBadge from '@/components/uni-badge/uni-badge.vue'
+	import remen from './views/remen.vue'
 	export default {
 		components: {
 			slideshow,
 			uniSection,
 			uniGrid,
 			uniGridItem,
-			uniBadge
+			uniBadge,
+			remen
 		},
 		data() {
 			return {

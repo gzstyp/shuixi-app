@@ -9,42 +9,32 @@
 		</view>
 		<view class="center-list">
 			<view class="center-list-item border-bottom">
-				<text class="list-icon">&#xebd0;</text>
-				<text class="list-text">我的消息</text>
+				<!-- <text class="list-icon">&#xe60f;</text> -->
+				<text class="list-text">帐号管理</text>
 				<text class="navigat-arrow">&#xe65e;</text>
 			</view>
-			<view class="center-list-item border-bottom">
-				<text class="list-icon">&#xea24;</text>
-				<text class="list-text">编辑资料</text>
-				<text class="navigat-arrow">&#xe65e;</text>
-			</view>
-		</view>
-		<view class="center-list">
-			<view class="center-list-item border-bottom">
-				<text class="list-icon">&#xe7e1;</text>
-				<text class="list-text">常见问题</text>
-				<text class="navigat-arrow">&#xe65e;</text>
-			</view>
-			<view class="center-list-item border-bottom">
-				<text class="list-icon">&#xe6d2;</text>
-				<text class="list-text">客服中心</text>
-				<text class="navigat-arrow">&#xe65e;</text>
-			</view>
-			<view class="center-list-item border-bottom">
-				<text class="list-icon">&#xea95;</text>
-				<text class="list-text">分享小程序</text>
+			<view class="center-list-item">
+				<text class="list-icon">&#xe639;</text>
+				<text class="list-text">新消息通知</text>
 				<text class="navigat-arrow">&#xe65e;</text>
 			</view>
 		</view>
 		<view class="center-list">
 			<view class="center-list-item border-bottom">
-				<text class="list-icon">&#xea4a;</text>
-				<text class="list-text">商家入驻</text>
+				<text class="list-icon">&#xe60b;</text>
+				<text class="list-text">帮助与反馈</text>
 				<text class="navigat-arrow">&#xe65e;</text>
 			</view>
-			<view class="center-list-item border-bottom">
-				<text class="list-icon">&#xe98a;</text>
-				<text class="list-text">菜谱上传</text>
+			<view class="center-list-item">
+				<text class="list-icon">&#xe65f;</text>
+				<text class="list-text">服务条款及隐私</text>
+				<text class="navigat-arrow">&#xe65e;</text>
+			</view>
+		</view>
+		<view class="center-list">
+			<view class="center-list-item">
+				<text class="list-icon">&#xe614;</text>
+				<text class="list-text">关于应用</text>
 				<text class="navigat-arrow">&#xe65e;</text>
 			</view>
 		</view>
@@ -77,22 +67,6 @@
 		font-style: normal;
 		src: url('https://at.alicdn.com/t/font_984210_5cs13ndgqsn.ttf') format('truetype');
 	}
-	
-	@font-face {
-	  font-family: 'iconfont';
-	  src: url('/static/iconfont/iconfont.eot'); /* IE9*/
-	  src: url('/static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-	  url('/static/iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
-	  url('/static/iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-	  url('/static/iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
-	}
-	
-	.iconfont{
-	    font-family:"iconfont" !important;
-	    font-size:16px;font-style:normal;
-	    -webkit-font-smoothing: antialiased;
-	    -webkit-text-stroke-width: 0.2px;
-	    -moz-osx-font-smoothing: grayscale;}
 
 	page,
 	view {
@@ -172,7 +146,7 @@
 	}
 
 	.border-bottom {
-		border-bottom-width: 0.5upx;
+		border-bottom-width: 1upx;
 		border-color: #c8c7cc;
 		border-bottom-style: solid;
 	}
@@ -181,19 +155,18 @@
 		width: 40upx;
 		height: 90upx;
 		line-height: 90upx;
-		font-size: 45upx;
-		color: #FEB82B;
+		font-size: 34upx;
+		color: #4cd964;
 		text-align: center;
-		font-family: iconfont;
+		font-family: texticons;
 		margin-right: 20upx;
 	}
 
 	.list-text {
 		height: 90upx;
 		line-height: 90upx;
-		font-size: 33upx;
+		font-size: 34upx;
 		color: #555;
-		margin-left: 10upx;
 		flex: 1;
 		text-align: left;
 	}

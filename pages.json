@@ -12,7 +12,7 @@
 				"navigationBarTitleText": "水西天香"
 			}
 		},{
-			"path": "pages/my/my",
+			"path": "pages/my/test",
 			"style": {
 				"navigationBarTitleText": "我的"
 			}
@@ -26,26 +26,26 @@
 	},
 	"tabBar" : {
 		"color":"#999794",
-		"selectedColor":"#33312e",
+		"selectedColor":"#FEB82B",
 		"borderStyle":"white",
 		"backgroundColor":"#fafafa",
 		"list":[
 			{
 				"pagePath":"pages/index/index",
-				"iconPath":"./static/tab/index_normal.png",
-				"selectedIconPath":"static/tab/index_select.png",
+				"iconPath":"./static/tab/index.png",
+				"selectedIconPath":"static/tab/index_selected.png",
 				"text":"首页"
 			},
 			{
 				"pagePath":"pages/profile/profile",
-				"iconPath":"./static/tab/profile_normal.png",
-				"selectedIconPath":"static/tab/profile_select.png",
+				"iconPath":"./static/tab/profile.png",
+				"selectedIconPath":"static/tab/profile-selected.png",
 				"text":"水西天香"
 			},
 			{
-				"pagePath":"pages/my/my",
-				"iconPath":"./static/tab/my_normal.png",
-				"selectedIconPath":"static/tab/my_select.png",
+				"pagePath":"pages/my/test",
+				"iconPath":"./static/tab/my.png",
+				"selectedIconPath":"static/tab/my-selected.png",
 				"text":"我的"
 			}
 		]
