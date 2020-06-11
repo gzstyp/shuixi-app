@@ -1,10 +1,6 @@
 <template>
 	<view class="prefer-content">
-		<view class="combo">
-			<image class="combo-left" src="/static/images/icon_choiceness.png"/>
-			<text class="prefer-title">厨师精选</text>
-			<image src="/static/images/next_normal.svg" mode="widthFix" class="combo-right" @click="comboMore()"/>
-		</view>
+		<item-head ref="itemViewHead" :imgsrc="imgsrc" :label="label" :objects="objects"></item-head>
 		<scroll-view scroll-x="true" class="scroll" scroll-with-animation="true">
 			<view class="prefer-dis">
 				<block v-for="(item,index) in preferData" :key="index">
@@ -19,11 +15,19 @@
 </template>
 
 <script>
+	import itemHead from './itemHead.vue';
 	import {hints} from '../../../api/hints.js';
 	export default {
-		props : {},
+		components:{
+			itemHead
+		},
 		data () {
 			return {
+				imgsrc : "/static/images/icon_choiceness.png",
+				label : "厨师精选",
+				objects : {
+					"kid":"5120"
+				},
 				preferData : [
 					{
 						"kid":"100001",
@@ -43,11 +47,7 @@
 				]
 			}
 		},
-		methods:{
-			comboMore : function(){
-				hints.info('更多');
-			}
-		},
+		methods:{},
 		created(){
 		}
 	}
@@ -61,32 +61,6 @@
 		border-color: #FAA70D;
 		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(254,184,43, 0.6);
 		outline: 0 none;
-	}
-	.combo{
-		margin-bottom: 20rpx;
-		padding-top:16rpx;
-		margin-left: 14rpx;
-		position: relative;
-	}
-	.combo-left{
-		width: 29rpx;
-		height: 35rpx;
-	}
-	.combo-right{
-		width:40rpx;
-		height:40rpx;
-		margin-bottom:-4rpx;
-		justify-content: flex-end;
-		flex-grow: 5;
-		position: absolute;
-		top:20rpx;
-		right: 20rpx;
-	}
-	.combo .prefer-title{
-		font-size: 36rpx;
-		height: 50rpx;
-		line-height: 50rpx;
-		margin-left: 10rpx;
 	}
 	.scroll{
 		white-space: nowrap;
