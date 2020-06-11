@@ -13,7 +13,7 @@
 					</view>
 				</uni-grid-item>
 			</uni-grid>
-		</view> -->
+		</view>
 		<uni-section title="热门推荐" style="color: #007AFF;" type="line"></uni-section>
 		
 	</view>
