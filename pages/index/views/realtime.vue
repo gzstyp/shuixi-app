@@ -18,7 +18,7 @@
 						<text class="product-pv-total">{{item.PVTOTAL}}浏览</text>
 						<image class="pv-star-icon" src="../../../static/images/star_normal.svg" mode="widthFix"/>
 						<text class="enshrine-total">{{item.ENSHRINE_TOTAL}}收藏</text>
-					</view>				
+					</view>
 					<text class="product-info">{{item.PRODUCT_INFO}}</text>
 					<view class="product-bottom">
 						<view class="photo-username">
@@ -141,7 +141,7 @@
 	.content-right{
 		margin-left:14rpx;
 	}
-	.right-contentP{
+	.right-content{
 		display: flex;
 		justify-content:space-between;
 		position: relative;
