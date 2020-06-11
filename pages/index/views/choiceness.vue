@@ -1,9 +1,9 @@
 <template>
 	<view class="prefer-content">
 		<view class="combo">
-			<image class="combo-left" src="../../../static/images/icon_choiceness.png"/>
+			<image class="combo-left" src="/static/images/icon_choiceness.png"/>
 			<text class="prefer-title">厨师精选</text>
-			<image src="../../../static/images/next_normal.svg" mode="widthFix" class="combo-right" @click="comboMore()"/>
+			<image src="/static/images/next_normal.svg" mode="widthFix" class="combo-right" @click="comboMore()"/>
 		</view>
 		<scroll-view scroll-x="true" class="scroll" scroll-with-animation="true">
 			<view class="prefer-dis">

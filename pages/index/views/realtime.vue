@@ -1,9 +1,9 @@
 <template>
 	<view class="prefer-content">
 		<view class="view-header">
-			<image class="header-left" src="../../../static/images/icon_realtime.png"/>
+			<image class="header-left" src="/static/images/icon_realtime.png"/>
 			<text class="prefer-lable">实时新品</text>
-			<image src="../../../static/images/next_normal.svg" mode="widthFix" class="header-right" @click="realTimeMore()"/>
+			<image src="/static/images/next_normal.svg" mode="widthFix" class="header-right" @click="realTimeMore()"/>
 		</view>
 		<block v-for="(item,index) in productDatas" :key="index">
 			<view class="view-item-content">
@@ -14,9 +14,9 @@
 						<text class="lable-time">{{item.BEFORE}}</text>
 					</view>
 					<view style="position: relative;margin-top: -20rpx;">
-						<image class="product-pv-eye" src="../../../static/images/eye_normal.svg" mode="widthFix"/>
+						<image class="product-pv-eye" src="/static/images/eye_normal.svg" mode="widthFix"/>
 						<text class="product-pv-total">{{item.PVTOTAL}}浏览</text>
-						<image class="pv-star-icon" src="../../../static/images/star_normal.svg" mode="widthFix"/>
+						<image class="pv-star-icon" src="/static/images/star_normal.svg" mode="widthFix"/>
 						<text class="enshrine-total">{{item.ENSHRINE_TOTAL}}收藏</text>
 					</view>
 					<text class="product-info">{{item.PRODUCT_INFO}}</text>
@@ -25,7 +25,7 @@
 							<image class="img-photo" :src="item.LOGO" mode="aspectFill"/>
 							<text class="username">{{item.SHOP_NAME}}</text>
 						</view>
-						<image class="enshrine-lable" src="../../../static/images/star_normal.svg" mode="widthFix" @click="enshrineProduct(item.KID)"/>
+						<image class="enshrine-lable" src="/static/images/star_normal.svg" mode="widthFix" @click="enshrineProduct(item.KID)"/>
 					</view>
 				</view>
 			</view>
