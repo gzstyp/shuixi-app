@@ -1,10 +1,6 @@
 <template>
 	<view class="prefer-content">
-		<view class="view-header">
-			<image class="header-left" src="/static/images/icon_realtime.png"/>
-			<text class="prefer-lable">实时新品</text>
-			<image src="/static/images/next_normal.svg" mode="widthFix" class="header-right" @click="realTimeMore()"/>
-		</view>
+		<item-head ref="itemViewHead" :imgsrc="imgsrc" :label="label" :objects="objects"></item-head>
 		<block v-for="(item,index) in productDatas" :key="index">
 			<itemProduct :item="item"></itemProduct>
 		</block>
@@ -13,14 +9,21 @@
 
 <script>
 	import itemProduct from './itemProduct.vue';
+	import itemHead from './itemHead.vue';
 	import {hints} from '../../../api/hints.js';
 	export default {
 		props : {},
 		components:{
-			itemProduct
+			itemProduct,
+			itemHead
 		},
 		data () {
 			return {
+				imgsrc : "/static/images/icon_realtime.png",
+				label : "实时新品",
+				objects : {
+					"kid":"1024",
+				},
 				productDatas : [
 					{
 						"KID":"100011",
@@ -67,9 +70,6 @@
 			}
 		},
 		methods:{
-			realTimeMore : function(){
-				hints.info('更多');
-			},
 			enshrineProduct : function(kid){
 				hints.info(kid);
 			}
