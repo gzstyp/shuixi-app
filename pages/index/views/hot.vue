@@ -1,21 +1,23 @@
 <template>
-	<view class="prefer-content">
+	<view class="view-parent-container">
 		<item-head ref="itemViewHead" :itemData="itemData"></item-head>
 		<block v-for="(item,index) in productDatas" :key="index">
-			<item-product :item="item"></item-product>
+			<item-hot :item="item"></item-hot>
 		</block>
 	</view>
 </template>
 
 <script>
 	import itemProduct from './itemProduct.vue';
+	import itemHot from './itemHot.vue';
 	import itemHead from './itemHead.vue';
 	import {hints} from '../../../api/hints.js';
 	export default {
 		props : {},
 		components:{
 			itemProduct,
-			itemHead
+			itemHead,
+			itemHot
 		},
 		data () {
 			return {
@@ -84,7 +86,7 @@
 </script>
 
 <style>
-	.prefer-content{
+	.view-parent-container{
 		margin: 30rpx 0;
 		border-radius: 20rpx;
 		border-color: #FAA70D;

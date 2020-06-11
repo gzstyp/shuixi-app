@@ -6,27 +6,24 @@
 				<text class="lable-name">{{item.CATENAME}}</text>
 				<text class="lable-time">{{item.BEFORE || '1分钟'}}前</text>
 			</view>
-			<view style="position: relative;margin-top: -20rpx;">
-				<image class="product-pv-eye" src="/static/images/eye_normal.svg" mode="widthFix"/>
-				<text class="product-pv-total">{{item.PVTOTAL}}浏览</text>
-				<image class="pv-star-icon" src="/static/images/star_normal.svg" mode="widthFix"/>
-				<text class="enshrine-total">{{item.ENSHRINE_TOTAL}}收藏</text>
-			</view>
+			<!-- 浏览量和收藏量 -->
+			<view-browse :item="item"></view-browse>
 			<text class="product-info">{{item.PRODUCT_INFO}}</text>
-			<view class="product-bottom">
-				<view class="photo-username">
-					<image class="img-photo" :src="item.LOGO" mode="aspectFill"/>
-					<text class="username">{{item.SHOP_NAME}}</text>
-				</view>
-				<image class="enshrine-lable" src="/static/images/star_normal.svg" mode="widthFix" @click="enshrineProduct(item.KID)"/>
-			</view>
+			<!-- 商家logo和商家名称、收藏图标 -->
+			<view-logo-name :item="item"></view-logo-name>
 		</view>
 	</view>
 </template>
 
 <script>
+	import viewBrowse from './viewBrowse.vue';
+	import viewLogoName from './viewLogoName.vue';
 	import {hints} from '../../../api/hints.js';
 	export default{
+		components:{
+			viewBrowse,
+			viewLogoName
+		},
 		props : {
 			item : null
 		},
@@ -77,35 +74,8 @@
 		font-size:26rpx;
 		color: #999999;
 		position: relative;
-		top:-8rpx;
+		top:-4rpx;
 		right:0;
-	}
-	/* 浏览量图标 */
-	.product-pv-eye{
-		height:26rpx;
-		width:30rpx;
-		position: absolute;
-		top:12rpx;
-	}
-	/* 新品浏览量 */
-	.product-pv-total{
-		font-size:24rpx;
-		color: #666666;
-		margin-left: 32rpx;
-	}
-	/* 收藏图标 */
-	.pv-star-icon{
-		height:26rpx;
-		width:26rpx;
-		margin-left:8rpx;
-		position: absolute;
-		top:12rpx;
-	}
-	/* 收藏人数 */
-	.enshrine-total{
-		font-size:24rpx;
-		color: #666666;
-		margin-left:40rpx;
 	}
 	/* 新品介绍 */
 	.product-info{
@@ -116,32 +86,5 @@
 		display: -webkit-box;
 		-webkit-line-clamp: 3;
 		-webkit-box-orient:vertical;
-	}
-	/* 商家图标及商家名称和收藏按钮并排 */
-	.product-bottom{
-		display: flex;
-		justify-content: space-between;
-	}
-	/* 商家图标及商家名称并排 */
-	.photo-username{
-		display: flex;
-	}
-	/* 商家logo */
-	.img-photo{
-		width:50rpx;
-		height:50rpx;
-		margin-top:8rpx;
-	}
-	/* 商家名称 */
-	.username{
-		font-size: 30rpx;
-		margin-top:20rpx;
-		margin-left: 10rpx;
-	}
-	/* 收藏按钮图标 */
-	.enshrine-lable{
-		width:40rpx;
-		height:40rpx;
-		margin-top:8rpx;
 	}
 </style>
