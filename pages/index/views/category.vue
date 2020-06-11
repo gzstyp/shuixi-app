@@ -2,7 +2,7 @@
 	<view class="cate-category">
 		<scroll-view scroll-x="true" class="scroll" scroll-with-animation="true">
 			<view class="prefer-dis">
-				<block v-for="(item,index) in categoryList">
+				<block v-for="(item,index) in categoryList" :key="index">
 					<view class="prefer-view" @click="categoryMore(item.kid)">
 						<image :src="item.image" mode="aspectFill"/>
 						<text>{{item.lable}}</text>
@@ -22,22 +22,22 @@
 					{
 						"kid" : "10001",
 						"lable" : "凉菜类",
-						"image" : "../../static/images/category1.png"
+						"image" : "/static/images/category1.png"
 					},
 					{
 						"kid" : "10002",
 						"lable" : "甜食类",
-						"image" : "../../static/images/category2.png"
+						"image" : "/static/images/category2.png"
 					},
 					{
 						"kid" : "10003",
 						"lable" : "面食类",
-						"image" : "../../static/images/category3.png"
+						"image" : "/static/images/category3.png"
 					},
 					{
 						"kid" : "10004",
 						"lable" : "炒菜类",
-						"image" : "../../static/images/category4.png"
+						"image" : "/static/images/category4.png"
 					}
 				]
 			}

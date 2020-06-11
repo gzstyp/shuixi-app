@@ -24,15 +24,15 @@
 				bannerList : [
 					{
 						"kid":"10001",
-						"image":"../../static/images/banner1.png"
+						"image":"/static/images/banner1.png"
 					},
 					{
 						"kid":"10002",
-						"image":"../../static/images/banner2.png"
+						"image":"/static/images/banner2.png"
 					},
 					{
 						"kid":"10003",
-						"image":"../../static/images/banner3.png"
+						"image":"/static/images/banner3.png"
 					}
 				]
 			}

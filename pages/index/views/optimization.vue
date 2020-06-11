@@ -29,19 +29,19 @@
 				preferData : [
 					{
 						"name":"红烧肉(1-2套餐)",
-						"image":"../../static/images/scroll-view-01.png"
+						"image":"/static/images/scroll-view-01.png"
 					},
 					{
 						"name":"红烧狮子头(3-5人套餐)",
-						"image":"../../static/images/scroll-view-02.png"
+						"image":"/static/images/scroll-view-02.png"
 					},
 					{
 						"name":"清蒸鲈鱼(3-5人套餐)",
-						"image":"../../static/images/scroll-view-03.png"
+						"image":"/static/images/scroll-view-03.png"
 					},
 					{
 						"name":"剁椒鱼头(4-7人套餐)",
-						"image":"../../static/images/scroll-view-04.png"
+						"image":"/static/images/scroll-view-04.png"
 					}
 				]
 			}

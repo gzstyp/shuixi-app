@@ -1,7 +1,7 @@
 <template>
 	<view class="search-container">
 		<view class="search-view" @click="search()">
-			<image src="../../../static/images/icon_search.png" mode="widthFix" class="search-left"></image>
+			<image src="/static/images/icon_search.png" mode="widthFix" class="search-left"></image>
 			<input type="text" placeholder="请输入关键字" disabled/>
 		</view>
 	</view>

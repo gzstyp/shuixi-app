@@ -30,17 +30,17 @@
 					{
 						"kid":"100001",
 						"name":"澳洲牛排",
-						"image":"../../static/images/index/choiceness1.png"
+						"image":"/static/images/index/choiceness1.png"
 					},
 					{
 						"kid":"100002",
 						"name":"哈萨里披萨",
-						"image":"../../static/images/index/choiceness2.png"
+						"image":"/static/images/index/choiceness2.png"
 					},
 					{
 						"kid":"100003",
 						"name":"清蒸大闸蟹",
-						"image":"../../static/images/index/choiceness3.png"
+						"image":"/static/images/index/choiceness3.png"
 					}
 				]
 			}

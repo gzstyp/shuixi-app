@@ -27,17 +27,17 @@
 					{
 						"kid" : "100001",
 						"name" : "水西公园夜景",
-						"image" : "../../static/images/profile/banner1.png"
+						"image" : "/static/images/profile/banner1.png"
 					},
 					{
 						"kid" : "100002",
 						"name" : "人间仙境",
-						"image" : "../../static/images/profile/banner2.png"
+						"image" : "/static/images/profile/banner2.png"
 					},
 					{
 						"kid" : "100003",
 						"name" : "美翻了,我的水西",
-						"image" : "../../static/images/profile/banner3.png"
+						"image" : "/static/images/profile/banner3.png"
 					}
 				]
 			}
