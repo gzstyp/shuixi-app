@@ -6,44 +6,24 @@
 			<image src="/static/images/next_normal.svg" mode="widthFix" class="header-right" @click="realTimeMore()"/>
 		</view>
 		<block v-for="(item,index) in productDatas" :key="index">
-			<view class="view-item-content">
-				<image class="content-left" :src="item.CATE_IMAGE" mode="aspectFill"/>
-				<view class="content-right">
-					<view class="right-content">
-						<text class="lable-name">{{item.CATENAME}}</text>
-						<text class="lable-time">{{item.BEFORE}}</text>
-					</view>
-					<view style="position: relative;margin-top: -20rpx;">
-						<image class="product-pv-eye" src="/static/images/eye_normal.svg" mode="widthFix"/>
-						<text class="product-pv-total">{{item.PVTOTAL}}浏览</text>
-						<image class="pv-star-icon" src="/static/images/star_normal.svg" mode="widthFix"/>
-						<text class="enshrine-total">{{item.ENSHRINE_TOTAL}}收藏</text>
-					</view>
-					<text class="product-info">{{item.PRODUCT_INFO}}</text>
-					<view class="product-bottom">
-						<view class="photo-username">
-							<image class="img-photo" :src="item.LOGO" mode="aspectFill"/>
-							<text class="username">{{item.SHOP_NAME}}</text>
-						</view>
-						<image class="enshrine-lable" src="/static/images/star_normal.svg" mode="widthFix" @click="enshrineProduct(item.KID)"/>
-					</view>
-				</view>
-			</view>
+			<itemProduct :item="item"></itemProduct>
 		</block>
 	</view>
 </template>
 
 <script>
+	import itemProduct from './itemProduct.vue';
 	import {hints} from '../../../api/hints.js';
 	export default {
-		props : {
-			preferListData : ''
+		props : {},
+		components:{
+			itemProduct
 		},
 		data () {
 			return {
 				productDatas : [
 					{
-						"KID":"100001",
+						"KID":"100011",
 						"CATE_IMAGE":"/static/images/realtime01.png",
 						"CATENAME":"草莓水果奶油蛋糕",
 						"BEFORE":"10分钟前",
@@ -53,7 +33,7 @@
 						"SHOP_NAME":"羊城西饼",
 						"LOGO":"/static/images/profile_photo.png"
 					},{
-						"KID":"100002",
+						"KID":"100012",
 						"CATE_IMAGE":"/static/images/realtime02.png",
 						"CATENAME":"皮蛋瘦肉粥",
 						"BEFORE":"7分钟前",
@@ -63,7 +43,7 @@
 						"SHOP_NAME":"贵州龙",
 						"LOGO":"/static/images/profile_photo.png"
 					},{
-						"KID":"100003",
+						"KID":"100013",
 						"CATE_IMAGE":"/static/images/realtime03.png",
 						"CATENAME":"清蒸金针鱼",
 						"BEFORE":"1小时前",
@@ -73,7 +53,7 @@
 						"SHOP_NAME":"羊城西饼",
 						"LOGO":"/static/images/profile_photo.png"
 					},{
-						"KID":"100004",
+						"KID":"100114",
 						"CATE_IMAGE":"/static/images/realtime04.png",
 						"CATENAME":"山楂银耳汤",
 						"BEFORE":"12分钟前",
