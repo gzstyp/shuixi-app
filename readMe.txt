@@ -25,3 +25,15 @@
 
 　　头部导航栏：下一个块元素需要用margin-top进行上下分开，否则导航栏会将其覆盖
 
+//1.导入子组件
+import search from './views/search.vue';
+//2.注册组件
+components:{
+	search
+},
+<template>
+	<view class="contenting">
+		<!-- 3.渲染 -->
+		 <search></search>
+	</view>
+</template>
