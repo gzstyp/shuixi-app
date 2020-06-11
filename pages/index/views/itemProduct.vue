@@ -1,5 +1,5 @@
 <template>
-	<view class="view-item-content" v-model="item">
+	<view class="view-item-content">
 		<image class="content-left" :src="item.CATE_IMAGE" mode="aspectFill"/>
 		<view class="content-right">
 			<view class="right-content">
@@ -25,20 +25,19 @@
 </template>
 
 <script>
+	import {hints} from '../../../api/hints.js';
 	export default{
+		props : {
+			item : null
+		},
 		data() {
 			return {
-				item : {
-					"KID":"100001",
-					"CATE_IMAGE":"/static/images/realtime01.png",
-					"CATENAME":"草莓水果奶油蛋糕",
-					"BEFORE":"10分钟前",
-					"PVTOTAL":"1.6w",
-					"ENSHRINE_TOTAL":"310000.6w",
-					"PRODUCT_INFO":"草莓奶油蛋糕这款蛋糕制作难度一般，不适合新手操作，主要制作材料是新鲜草莓、蛋糕粉、乳酪，辅料和调味料需要鸡蛋、黄油、糖、香草汁、烘焙粉。",
-					"SHOP_NAME":"羊城西饼",
-					"LOGO":"/static/images/profile_photo.png"
-				}
+
+			}
+		},
+		methods:{
+			enshrineProduct : function(kid){
+				hints.info(kid);
 			}
 		}
 	}
