@@ -37,3 +37,39 @@ components:{
 		 <search></search>
 	</view>
 </template>
+
+父组件定义值(父组件传值及值类型):
+data () {
+	return {
+		imgsrc : "/static/images/icon_realtime.png",
+		label : "实时新品",
+		objects : {
+			"kid":"2048"
+		}
+	}
+},	
+传值(item-head的vue文件是itemHead.vue):
+<item-head ref="itemViewHead" :imgsrc="imgsrc" :label="label" :objects="objects"></item-head>,其中imgsrc是不能随便取随呢!!!
+
+子组件获取值
+props : {
+	imgsrc:null,
+	label:null,
+	objects : {
+		type : Object,
+		default : null
+	}
+},
+调用方法:
+methods : {
+	headMore : function(){
+		hints.info(this.object.kid);
+	}
+}
+
+调用并显示值
+<view class="view-head-root">
+	<image class="view-head-left" :src="imgsrc"/>
+	<text class="view-head-label">{{label}}</text>
+	<image src="/static/images/next_normal.svg" mode="widthFix" class="view-head-right" @click="headMore()"/>
+</view>
