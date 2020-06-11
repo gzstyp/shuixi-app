@@ -6,6 +6,7 @@
 		 <optimization></optimization>
 		 <choiceness></choiceness>
 		 <realtime></realtime>
+		 <hot></hot>
 	</view>
 </template>
 <!-- 父组件向子组件传递数据，是通过:Xxx="数据" ,子组件接收方是通过 props:{ 数据 : null } -->
@@ -17,6 +18,7 @@
 	import optimization from './views/optimization.vue';
 	import choiceness from './views/choiceness.vue';
 	import realtime from './views/realtime.vue';
+	import hot from './views/hot.vue';
 	//引入接口url,大括号{}接收变量
 	import {httpReq} from '../../api/httpReq.js';
 	import {urls} from '../../api/urls.js';
@@ -27,7 +29,8 @@
 			category,
 			optimization,
 			choiceness,
-			realtime
+			realtime,
+			hot
 		},
 		/* 一般情况下,是在父组件获取数据再传到子组件!!!???父组件给子组件传值!!!,所以把请求放在父组件来 */
 		data () {

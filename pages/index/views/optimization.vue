@@ -1,6 +1,6 @@
 <template>
 	<view class="prefer-content">
-		<item-head ref="itemViewHead" :imgsrc="imgsrc" :label="label" :objects="objects"></item-head>
+		<item-head ref="itemViewHead" :itemData="itemData"></item-head>
 		<scroll-view scroll-x="true" class="scroll" scroll-with-animation="true">
 			<view class="prefer-dis">
 				<block v-for="(item,index) in preferData" :key="index">
@@ -23,10 +23,12 @@
 		},
 		data () {
 			return {
-				imgsrc : "/static/images/icon_combo.png",
-				label : "优选套餐",
-				objects : {
-					"kid":"2048"
+				itemData : {
+					imgsrc : "/static/images/index/icon/youxuantaocan.svg",
+					label : "优选套餐",
+					objects : {
+						"kid":"12048"
+					}
 				},
 				preferData : [
 					{

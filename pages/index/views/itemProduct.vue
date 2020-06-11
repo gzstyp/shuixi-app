@@ -4,7 +4,7 @@
 		<view class="content-right">
 			<view class="right-content">
 				<text class="lable-name">{{item.CATENAME}}</text>
-				<text class="lable-time">{{item.BEFORE}}</text>
+				<text class="lable-time">{{item.BEFORE || '1分钟'}}前</text>
 			</view>
 			<view style="position: relative;margin-top: -20rpx;">
 				<image class="product-pv-eye" src="/static/images/eye_normal.svg" mode="widthFix"/>

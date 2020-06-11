@@ -20,10 +20,10 @@
 		data () {
 			return {
 				itemData : {
-					imgsrc : "/static/images/index/icon/shishixinpin.svg",
-					label : "实时新品",
+					imgsrc : "/static/images/index/icon/remencaixi.svg",
+					label : "热门菜系",
 					objects : {
-						"kid":"11024"
+						"kid":"11000"
 					}
 				},
 				productDatas : [
