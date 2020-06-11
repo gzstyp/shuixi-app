@@ -94,7 +94,7 @@
 	.purchase{
 		display: flex;/* 并排排列,让两个view并排排列 */
 		align-items: center;/* 让文字居中 */
-		padding: 10rpx;/* 离下面的距离是10 */
+		padding-bottom: 10rpx;/* 离下面的距离是10 */
 	}
 	/* 图片用一个view来包裹它 */
 	.conteng-img{
