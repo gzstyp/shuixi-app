@@ -21,9 +21,7 @@
 <script>
 	import {hints} from '../../../api/hints.js';
 	export default {
-		props : {
-			preferListData : ''
-		},
+		props : {},
 		data () {
 			return {
 				preferData : [
