@@ -4,11 +4,11 @@
 		<image class="content-left" :src="item.CATE_IMAGE" mode="aspectFill"/>
 		<view class="content-right">
 			<view class="right-content">
-				<text class="lable-name">{{item.CATENAME}}</text>
-				<text class="lable-time">{{item.BEFORE || '1分钟'}}前0</text>
+				<text class="label-name">{{item.CATENAME}}</text>
+				<text class="label-time">{{item.BEFORE || '1分钟'}}前</text>
 			</view>
 			<!-- 浏览量和收藏量 -->
-			<view-browse :item="item"></view-browse>
+			<view-browse :item="item" style="margin-top:-16rpx;"></view-browse>
 			<text class="product-info">{{item.PRODUCT_INFO}}</text>
 			<!-- 商家logo和商家名称、收藏图标 -->
 			<view-logo-name :item="item"></view-logo-name>
@@ -53,7 +53,7 @@
 		width:292rpx;
 	}
 	.content-right{
-		margin-left:14rpx;
+		margin-left:12rpx;
 	}
 	.right-content{
 		display: flex;
@@ -61,7 +61,7 @@
 		position: relative;
 	}
 	/* 新品名称 */
-	.lable-name{
+	.label-name{
 		font-size:32rpx;
 		display: inline-block;
 		white-space: nowrap;
@@ -71,7 +71,7 @@
 		color: #FEB82B;
 	}
 	/* 提示时间 */
-	.lable-time{
+	.label-time{
 		font-size:26rpx;
 		color: #999999;
 		position: relative;
@@ -81,11 +81,13 @@
 	/* 新品介绍 */
 	.product-info{
 		width:380rpx;
+		height: 88rpx;
 		font-size:30rpx;
 		overflow : hidden;
 		text-overflow: ellipsis;
 		display: -webkit-box;
 		-webkit-line-clamp: 3;
 		-webkit-box-orient:vertical;
+		margin-bottom: 4rpx;
 	}
 </style>

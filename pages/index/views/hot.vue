@@ -34,35 +34,38 @@
 				listData :[
 					{
 						"KID":"100012",
-						"CATE_IMAGE":"/static/images/realtime02.png",
+						"CATE_IMAGE":"/static/images/realtime01.png",
 						"CATENAME":"皮蛋瘦肉粥",
-						"BEFORE":"7分钟",
 						"PVTOTAL":"20.26w",
-						"ENSHRINE_TOTAL":"31250.6w",
-						"PRODUCT_INFO":"皮蛋瘦肉粥,好吃养颜",
+						"ENSHRINE_TOTAL":"2000.6w",
 						"SHOP_NAME":"贵州龙",
 						"LOGO":"/static/images/profile_photo.png"
 					},
 					{
-						"KID":"100013",
+						"KID":"100113",
+						"CATE_IMAGE":"/static/images/realtime02.png",
+						"CATENAME":"山楂银耳汤",
+						"PVTOTAL":"2000.8w",
+						"ENSHRINE_TOTAL":"32000.6w",
+						"SHOP_NAME":"天津狗不理包子",
+						"LOGO":"/static/images/profile_photo.png"
+					},
+					{
+						"KID":"100014",
 						"CATE_IMAGE":"/static/images/realtime03.png",
 						"CATENAME":"清蒸金针鱼",
-						"BEFORE":"1小时",
-						"PVTOTAL":"1.6w",
-						"ENSHRINE_TOTAL":"300.6w",
-						"PRODUCT_INFO":"蛋白的容器须无水无油，加几滴白醋进去后，打至粗泡后分两次加入白糖，打至蛋白干性发泡",
+						"PVTOTAL":"3500.6w",
+						"ENSHRINE_TOTAL":"50.6w",
 						"SHOP_NAME":"羊城西饼",
 						"LOGO":"/static/images/profile_photo.png"
 					},
 					{
-						"KID":"100114",
+						"KID":"100014",
 						"CATE_IMAGE":"/static/images/realtime04.png",
-						"CATENAME":"山楂银耳汤",
-						"BEFORE":"12分钟",
-						"PVTOTAL":"2.8w",
-						"ENSHRINE_TOTAL":"30.6w",
-						"PRODUCT_INFO":"先制作蛋黄糊，如果先打好了蛋白霜再制作蛋黄糊，这中间的时间里蛋白霜有可能消泡",
-						"SHOP_NAME":"天津狗不理包子",
+						"CATENAME":"白米鸡蛋粥",
+						"PVTOTAL":"350.6w",
+						"ENSHRINE_TOTAL":"5010.6w",
+						"SHOP_NAME":"羊城西饼",
 						"LOGO":"/static/images/profile_photo.png"
 					}
 				]
@@ -83,7 +86,6 @@
 		border-color: #FAA70D;
 		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(254,184,43, 0.6);
 		outline: 0 none;
-		padding-bottom: 20rpx;
 	}
 	/* 表示内容在一行排不下时，就换行,即就往下一行排列 */
 	.view-item-content{

@@ -28,6 +28,9 @@
 	.product-bottom{
 		display: flex;
 		justify-content: space-between;
+		height:50rpx;
+		line-height: 50rpx;
+		width: 100%;
 	}
 	/* 商家图标及商家名称并排 */
 	.photo-username{
@@ -37,12 +40,10 @@
 	.img-photo{
 		width:50rpx;
 		height:50rpx;
-		margin-top:8rpx;
 	}
 	/* 商家名称 */
 	.username{
 		font-size: 30rpx;
-		margin-top:20rpx;
 		margin-left: 10rpx;
 		overflow : hidden;
 		text-overflow: ellipsis;
@@ -54,6 +55,6 @@
 	.enshrine-lable{
 		width:40rpx;
 		height:40rpx;
-		margin-top:8rpx;
+		line-height: 40rpx;
 	}
 </style>
