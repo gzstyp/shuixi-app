@@ -79,3 +79,11 @@ methods : {
 	<text class="view-head-label">{{label}}</text>
 	<image src="/static/images/next_normal.svg" mode="widthFix" class="view-head-right" @click="headMore()"/>
 </view>
+
+#### ②全局引入
+```javascript
+    //全局引入 （main.js
+    import wsLoadMore from './components/wsure-load-more/load-more.vue';
+    Vue.component('wsLoadMore',wsLoadMore)
+
+```
