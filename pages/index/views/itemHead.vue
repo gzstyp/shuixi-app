@@ -1,3 +1,4 @@
+<!-- 顶部头部 -->
 <template>
 	<view class="view-head-root">
 		<image class="view-head-left" :src="itemData.imgsrc"/>

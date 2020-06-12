@@ -11,7 +11,8 @@
 			"style": {
 				"navigationBarTitleText": "水西天香"
 			}
-		},{
+		},
+		{
 			"path": "pages/my/test",
 			"style": {
 				"navigationBarTitleText": "我的"
@@ -22,7 +23,7 @@
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "水西天香",
 		"navigationBarBackgroundColor": "#FEB82B",
-		"backgroundColor": "#FEB82B"
+		"backgroundColor": "#FFFFFF"
 	},
 	"tabBar" : {
 		"color":"#999794",

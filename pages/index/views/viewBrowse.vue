@@ -1,3 +1,4 @@
+<!-- 实时新品-item项-浏览量和收藏人数 -->
 <template>
 	<view style="position: relative;margin-top: -20rpx;">
 		<image class="product-pv-eye" src="/static/images/eye_normal.svg" mode="widthFix"/>

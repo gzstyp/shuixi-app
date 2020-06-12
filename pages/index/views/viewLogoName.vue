@@ -1,3 +1,4 @@
+<!-- 实时新品-item项-商家logo、店铺名、收藏按钮 -->
 <template>
 	<view class="product-bottom">
 		<view class="photo-username">

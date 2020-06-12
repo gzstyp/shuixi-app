@@ -19,6 +19,7 @@
 	import choiceness from './views/choiceness.vue';
 	import realtime from './views/realtime.vue';
 	import hot from './views/hot.vue';
+	
 	//引入接口url,大括号{}接收变量
 	import {httpReq} from '../../api/httpReq.js';
 	import {urls} from '../../api/urls.js';

@@ -1,10 +1,11 @@
+<!-- 实时新品-item项 -->
 <template>
 	<view class="view-item-content">
 		<image class="content-left" :src="item.CATE_IMAGE" mode="aspectFill"/>
 		<view class="content-right">
 			<view class="right-content">
 				<text class="lable-name">{{item.CATENAME}}</text>
-				<text class="lable-time">{{item.BEFORE || '1分钟'}}前</text>
+				<text class="lable-time">{{item.BEFORE || '1分钟'}}前0</text>
 			</view>
 			<!-- 浏览量和收藏量 -->
 			<view-browse :item="item"></view-browse>

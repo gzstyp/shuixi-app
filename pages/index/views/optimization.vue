@@ -1,3 +1,4 @@
+<!-- 优选套餐 -->
 <template>
 	<view class="prefer-content">
 		<item-head ref="itemViewHead" :itemData="itemData"></item-head>
