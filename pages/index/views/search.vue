@@ -17,7 +17,9 @@
 		},
 		methods:{
 			search : function(){
-				hints.success('搜索');
+				uni.navigateTo({
+				    url: '/pages/search/index?from=1&type=2'
+				});
 			}
 		}
 	}

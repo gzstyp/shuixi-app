@@ -1,12 +1,12 @@
 <template>
 	<view class="contenting">
-		 <search></search>
-		 <banner></banner>
-		 <category></category>
-		 <optimization></optimization>
-		 <choiceness></choiceness>
-		 <realtime></realtime>
-		 <hot></hot>
+		<search></search>
+		<banner></banner>
+		<category></category>
+		<optimization></optimization>
+		<choiceness></choiceness>
+		<realtime></realtime>
+		<hot></hot>
 	</view>
 </template>
 <!-- 父组件向子组件传递数据，是通过:Xxx="数据" ,子组件接收方是通过 props:{ 数据 : null } -->
