@@ -1,7 +1,7 @@
 <template>
     <view style="padding-top:6rpx;">
 		<view class="search-container">
-			<view style="width:24%;">
+			<view style="width:18%;">
 				<xfl-select
 					:list="list"
 					:clearable="false"
@@ -51,7 +51,7 @@
 		display: flex;
 	}
 	.search-input{
-		width:60%;
+		width:64%;
 		height:80rpx;
 		line-height: 80rpx;
 		border:1px solid #c0c4cc;
@@ -60,7 +60,7 @@
 		margin-right:2rpx;
 	}
 	.search-btn{
-		width: 16%;
+		width: 18%;
 		height:85rpx;
 		line-height: 85rpx;
 		font-size: 30rpx;
