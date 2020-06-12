@@ -21,7 +21,7 @@
 		{
 			"path": "pages/search/index",
 			"style": {
-				"navigationBarTitleText": "菜品搜索"
+				"navigationBarTitleText": "菜品|搜索"
 			}
 		}
 	],
