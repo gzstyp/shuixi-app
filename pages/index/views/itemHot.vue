@@ -1,3 +1,4 @@
+<!-- 热门菜系-item项 -->
 <template>
 	<view class="view-item-info" @click="localCont()">
 		<view class="item-info-img">
@@ -29,7 +30,7 @@
 		},
 		methods:{
 			localCont : function(){
-				
+
 			}
 		}
 	}
@@ -73,15 +74,15 @@
 		text-overflow: ellipsis;
 		overflow: hidden;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 	.item-image{
 		height: 50rpx;
 		width: 50rpx;
@@ -92,7 +93,7 @@
 		font-size: 30rpx;
 		color: #cacaca;
 	}
-	
+
 	/* 收藏图标 */
 	.pv-star-icon{
 		height:26rpx;
