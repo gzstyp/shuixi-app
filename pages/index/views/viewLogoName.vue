@@ -44,6 +44,11 @@
 		font-size: 30rpx;
 		margin-top:20rpx;
 		margin-left: 10rpx;
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient:vertical;
 	}
 	/* 收藏按钮图标 */
 	.enshrine-lable{
