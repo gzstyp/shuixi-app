@@ -1,3 +1,4 @@
+<!--首页搜索-->
 <template>
 	<view class="search-container">
 		<view class="search-view" @click="search()">

@@ -1,3 +1,4 @@
+<!--菜品分类-->
 <template>
 	<view class="cate-category">
 		<scroll-view scroll-x="true" class="scroll" scroll-with-animation="true">

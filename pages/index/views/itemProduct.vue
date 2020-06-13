@@ -1,29 +1,29 @@
 <!-- 实时新品-item项 -->
 <template>
-	<view class="view-item-content">
-		<image class="content-left" :src="item.CATE_IMAGE" mode="aspectFill"/>
-		<view class="content-right">
-			<view class="right-content">
-				<text class="label-name">{{item.CATENAME}}</text>
-				<text class="label-time">{{item.BEFORE || '1分钟'}}前</text>
+	<view class="new-item-details">
+		<image class="details-left" :src="item.CATE_IMAGE" mode="aspectFill"/>
+		<view class="details-right">
+			<view class="catename-before">
+				<view class="catename-before-left oneline">{{item.CATENAME}}</view>
+				<view class="catename-before-right oneline">{{item.BEFORE || '1分钟'}}前</view>
 			</view>
-			<!-- 浏览量和收藏量 -->
-			<view-browse :item="item" style="margin-top:-16rpx;"></view-browse>
-			<text class="product-info">{{item.PRODUCT_INFO}}</text>
-			<!-- 商家logo和商家名称、收藏图标 -->
-			<view-logo-name :item="item"></view-logo-name>
+			<browseEnshrine :item="item"></browseEnshrine>
+			<view class="container-describe">
+				<text class="text-describe oneline">{{item.PRODUCT_INFO}}</text>
+			</view>
+			<logoName :item="item"></logoName>
 		</view>
 	</view>
 </template>
 
 <script>
-	import viewBrowse from './viewBrowse.vue';
-	import viewLogoName from './viewLogoName.vue';
+	import browseEnshrine from '../element/browseEnshrine.vue';
+	import logoName from '../element/logoName.vue';
 	import {hints} from '../../../api/hints.js';
 	export default{
 		components:{
-			viewBrowse,
-			viewLogoName
+			browseEnshrine,
+			logoName
 		},
 		props : {
 			item : null
@@ -43,51 +43,59 @@
 
 <style scoped>
 	/* item */
-	.view-item-content{
+	.new-item-details{
 		display: flex;
 		margin-top:16rpx;
+		height:230rpx;
 	}
-	.content-left{
+	.details-left{
 		margin-left:2rpx;
-		height:220rpx;
+		height:230rpx;
 		width:292rpx;
 	}
-	.content-right{
-		margin-left:12rpx;
+	.details-right{
+		margin-left:10rpx;
+		width: 100%;
 	}
-	.right-content{
+	.catename-before{
 		display: flex;
-		justify-content:space-between;
-		position: relative;
+		justify-content: space-between;
+		height: 32rpx;
+		line-height: 32rpx;
+	}
+	.oneline{
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+		-webkit-line-clamp:1;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 	/* 新品名称 */
-	.label-name{
+	.catename-before-left{
+		width: 75%;
+		height: 32rpx;
+		line-height: 32rpx;
 		font-size:32rpx;
-		display: inline-block;
-		white-space: nowrap;
-		width:280rpx;
-		overflow: hidden;
-		text-overflow:ellipsis;
 		color: #FEB82B;
 	}
 	/* 提示时间 */
-	.label-time{
+	.catename-before-right{
+		width:25%;
 		font-size:26rpx;
+		height: 32rpx;
+		line-height: 32rpx;
 		color: #999999;
-		position: relative;
-		top:-4rpx;
-		right:0;
+		text-align: right;
+		margin-right:10rpx;
 	}
 	/* 新品介绍 */
-	.product-info{
-		width:380rpx;
-		height: 88rpx;
+	.container-describe{
+		width: 100%;
+		height:92rpx;
+	}
+	.text-describe{
 		font-size:30rpx;
-		overflow : hidden;
-		text-overflow: ellipsis;
-		display: -webkit-box;
-		-webkit-line-clamp: 3;
-		-webkit-box-orient:vertical;
-		margin-bottom: 4rpx;
+		line-height:32rpx;
+		-webkit-line-clamp:3;
 	}
 </style>

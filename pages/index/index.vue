@@ -1,12 +1,19 @@
 <template>
-	<view class="contenting">
+	<view class="view-root">
+		<!-- 搜索框 -->
 		<search></search>
+		<!-- 滚动图 -->
 		<banner></banner>
+		<!-- 菜品类型 -->
 		<category></category>
+		<!-- 优选套餐 -->
 		<optimization></optimization>
+		<!-- 厨师精选 -->
 		<choiceness></choiceness>
+		<!-- 实时新品 -->
 		<realtime></realtime>
-		<hot></hot>
+		<!-- 热门菜系 -->
+		<listHot></listHot>
 	</view>
 </template>
 <!-- 父组件向子组件传递数据，是通过:Xxx="数据" ,子组件接收方是通过 props:{ 数据 : null } -->
@@ -18,7 +25,7 @@
 	import optimization from './views/optimization.vue';
 	import choiceness from './views/choiceness.vue';
 	import realtime from './views/realtime.vue';
-	import hot from './views/hot.vue';
+	import listHot from './views/listHot.vue';
 	
 	//引入接口url,大括号{}接收变量
 	import {httpReq} from '../../api/httpReq.js';
@@ -31,7 +38,7 @@
 			optimization,
 			choiceness,
 			realtime,
-			hot
+			listHot
 		},
 		/* 一般情况下,是在父组件获取数据再传到子组件!!!???父组件给子组件传值!!!,所以把请求放在父组件来 */
 		data () {
@@ -62,7 +69,7 @@
 </script>
 
 <style scoped>
-	.contenting{
+	.view-root{
 		margin: 0 15rpx;
 	}
 </style>

@@ -1,5 +1,5 @@
 
- 图片文件夹static下的可以这样直接 /static/images/index/choiceness2.png 访问
+details,item,list,-container,detail-describe
 
 1、将两个view元素分左右对齐　　
 
@@ -31,6 +31,20 @@ justify-content: space-between;/* 向两边撑开,也就是往两边排 */
 -webkit-line-clamp:2;/* 内容再多也仅显示2行显示 */
 text-overflow: ellipsis;/* 多出的则显示省略号 */
 
+justify-content: flex-end;往右边排列
+text-align: right;往右边排列
+左右两个时，使用百分比
+
+-----限制显示几行并在多于的省略号,需要注意的是line-height行间距,而line-height是跟font-size大小有关,其值肯定要大于它-----
+	font-size:30rpx;
+	height:103rpx;
+	line-height:34rpx;/* 行间距 */
+	display: -webkit-box;/* 必须 */
+	-webkit-box-orient:vertical;/* 必须 */
+	-webkit-line-clamp:3;/* 必须 */
+	text-overflow: ellipsis;/* 必须 */
+	overflow: hidden;/* 必须 */
+-----限制显示几行并在多于的省略号,需要注意的是line-height行间距,而line-height是跟font-size大小有关,其值肯定要大于它-----
 //1.导入子组件
 import search from './views/search.vue';
 //2.注册组件

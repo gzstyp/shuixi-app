@@ -1,3 +1,4 @@
+<!--轮播图-->
 <template>
 	<view class="swiper-view">
 		<swiper :indicator-dots="false" :autoplay="true" :interval="2000" :duration="1000" @change="bannerFun">
