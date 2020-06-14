@@ -1,6 +1,9 @@
 
 details,item,list,-container,detail-describe
 
+category-list-container
+category-item-container,
+
 1、将两个view元素分左右对齐　　
 
 　　(1) display: flex;justify-content: space-between;
@@ -33,6 +36,7 @@ text-overflow: ellipsis;/* 多出的则显示省略号 */
 
 justify-content: flex-end;往右边排列
 text-align: right;往右边排列
+text-align: end;往右边排列
 左右两个时，使用百分比
 
 -----限制显示几行并在多于的省略号,需要注意的是line-height行间距,而line-height是跟font-size大小有关,其值肯定要大于它-----
