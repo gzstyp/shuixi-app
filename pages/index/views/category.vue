@@ -4,9 +4,9 @@
 		<scroll-view scroll-x="true" class="scroll" scroll-with-animation="true">
 			<view class="prefer-dis">
 				<block v-for="(item,index) in categoryList" :key="index">
-					<view class="prefer-view" @click="categoryMore(item.kid)">
-						<image :src="item.image" mode="aspectFill"/>
-						<text>{{item.lable}}</text>
+					<view class="prefer-view" @click="categoryMore(item.KID)">
+						<image :src="item.IMAGE" mode="aspectFill"/>
+						<text>{{item.LABLE}}</text>
 					</view>
 				</block>
 			</view>
@@ -21,31 +21,33 @@
 			return {
 				categoryList : [
 					{
-						"kid" : "10001",
-						"lable" : "凉菜类",
-						"image" : "/static/images/category1.png"
+						"KID" : "10001",
+						"LABLE" : "凉菜类",
+						"IMAGE" : "/static/images/category1.png"
 					},
 					{
-						"kid" : "10002",
-						"lable" : "甜食类",
-						"image" : "/static/images/category2.png"
+						"KID" : "10002",
+						"LABLE" : "甜食类",
+						"IMAGE" : "/static/images/category2.png"
 					},
 					{
-						"kid" : "10003",
-						"lable" : "面食类",
-						"image" : "/static/images/category3.png"
+						"KID" : "10003",
+						"LABLE" : "面食类",
+						"IMAGE" : "/static/images/category3.png"
 					},
 					{
-						"kid" : "10004",
-						"lable" : "炒菜类",
-						"image" : "/static/images/category4.png"
+						"KID" : "10004",
+						"LABLE" : "炒菜类",
+						"IMAGE" : "/static/images/category4.png"
 					}
 				]
 			}
 		},
 		methods:{
 			categoryMore : function(kid){
-				hints.info(kid);
+				uni.navigateTo({
+				    url: '/pages/list/listCategory?kid='+kid
+				});
 			}
 		}
 	}

@@ -101,3 +101,39 @@ methods : {
     Vue.component('wsLoadMore',wsLoadMore)
 
 ```
+样式
+.cell {
+	position: relative;
+	display: flex;
+	padding: 30rpx 70rpx 30rpx 30rpx;
+	transition: background-color 0.3s;
+	font-size: 32rpx;
+}
+.cell:not(:last-child):before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 30rpx;
+	right: 0;
+	border-bottom: 1px solid #ebedf0;
+	transform-origin: 0% 100%;
+	transform: scaleY(0.5);
+}
+.cell:after {
+	content: ' ';
+	display: inline-block;
+	height: 12rpx;
+	width: 12rpx;
+	border-width: 4rpx 4rpx 0 0;
+	border-color: #c6c6c6;
+	border-style: solid;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	position: absolute;
+	top: 50%;
+	right: 45rpx;
+	margin-top: -8rpx;
+}
+.cell.hover {
+	background-color: #eeeeee;
+}

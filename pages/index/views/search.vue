@@ -1,9 +1,9 @@
 <!--首页搜索-->
 <template>
 	<view class="search-container">
-		<view class="search-view" @click="search()">
+		<view class="search-view" @click="search()" hover-class="search-view-hover">
 			<image src="/static/images/icon_search.png" mode="widthFix" class="search-left"></image>
-			<input type="text" placeholder="请输入关键字" disabled/>
+			<input type="text" placeholder="搜索内容" disabled/>
 		</view>
 	</view>
 </template>
@@ -56,5 +56,8 @@
 		font-size: 32rpx;
 		padding-left: 10rpx;
 		color: #666666;
+	}
+	.search-view-hover{
+		background: #ebedee;
 	}
 </style>

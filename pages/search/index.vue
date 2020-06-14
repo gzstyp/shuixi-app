@@ -17,7 +17,7 @@
 				</view>
 				<input class="view-input" placeholder="输入搜索的内容" v-model="inputValue" />
 			</view>
-			<view class="search-button" @click="search()">搜索</view>
+			<view class="search-button" hover-class="search-touch-hover" @click="search()">搜索</view>
 		</view>
 		<itemHot :listData="listData"></itemHot>
 	</view>
@@ -104,9 +104,6 @@
 				console.info(value);
 				console.info(type);
 			},
-			onLoad(option){
-				console.info(option);//接收才参数option是json格式
-			},
 			visibleChange(isShow){
 				//console.info('isShow:', isShow);
 			},
@@ -114,6 +111,12 @@
 				//console.info(newVal, oldVal, index, orignItem);//index是索引, orignItem,所选择的值
 				this.indexType = index;
 			}
+		},
+		created : function(){
+			//请求数据
+		},
+		onLoad(option){
+			console.info(option);//接收才参数option是json格式
 		}
 	}
 </script>
@@ -159,5 +162,8 @@
 		text-align: center;
 		font-size: 36rpx;
 		background:linear-gradient(to right,#ffcc66 5%,#ffcc00 100%);
+	}
+	.search-touch-hover{
+		color: #ffffff;
 	}
 </style>
