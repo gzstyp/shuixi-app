@@ -1,149 +1,163 @@
+<!--搜素页面-->
 <template>
-	<view class="active">
-		<view class="conteng">
-			<block v-for="(item,index) in listData" :key="index">
-				<view class="conteng-acticle" @click="localCont()">
-					<view class="conteng-img">
-						<image :src="item.image" mode="aspectFill"></image>
-					</view>
-					<!-- 文字介绍 -->
-					<view class="active-introduce">
-						<view class="active-name">{{item.name}}</view>
-						<view class="active-title">{{item.list}}</view>
-						<view class="active-label">{{item.label}}</view>
-						<view class="purchase>">
-							<text class="active-price">￥{{item.price}}</text>
-							<text class="active-purchase">{{item.buy || '0'}}人已购</text>
-						</view>
-					</view>
+	<view class="root-container">
+		<view class="search-container">
+			<view class="options-input">
+				<view style="width:30%;">
+					<xfl-select
+						:list="list"
+						:clearable="false"
+						:showItemNum="2"
+						:style_Container="listBoxStyle"
+						:placeholder="'菜品'"
+						:selectHideType="'independent'"
+						@change="change"
+						@visible-change="visibleChange"
+					></xfl-select>
 				</view>
-			</block>
+				<input class="view-input" placeholder="输入搜索的内容" v-model="inputValue" />
+			</view>
+			<view class="search-button" @click="search()">搜索</view>
 		</view>
+		<itemHot :listData="listData"></itemHot>
 	</view>
 </template>
 
 <script>
+	import xflSelect from '../../components/xfl-select.vue';
+	import itemHot from '../index/item/itemHot.vue';
 	export default{
-		name:"productList",
-		props : {
-			lists : Array
+		props : {},
+		components: {
+			xflSelect,
+			itemHot
 		},
 		data() {
 			return {
-				listData :[
-					{
-						"KID" : "20001",
-						"image" : "/static/images/index/choiceness1.png",
-						"name" : "三亚租车",
-						"list" : "我是中国人",
-						"label" : "法拉利租车",
-						"price" : 80.00,
-						"buy" : 102
-					},
-					{
-						"KID" : "20001",
-						"image" : "/static/images/index/choiceness2.png",
-						"name" : "海1南1岛",
-						"list" : "我是中国人，我爱我的祖国",
-						"label" : "中国人",
-						"price" : "8899",
-						"buy" : "88"
-					},
-					{
-						"KID" : "20001",
-						"image" : "/static/images/index/choiceness3.png",
-						"name" : "海8南8岛",
-						"list" : "我是中国人，我爱我的祖国，我爱我的祖国,样式要结合这个来一起使用",
-						"label" : "中国人",
-						"price" : 108.50,
-						"buy" : 150
-					},
+				listBoxStyle: `height: 38px; font-size: 16px;`,
+				list: ['菜品','商家'],
+				inputValue : '',
+				indexType : 0,
+				listData : [
+					 {
+						"KID":"1011",
+						"CATE_IMAGE":"/static/images/realtime01.png",
+						"CATENAME":"草莓水果奶油蛋糕草莓水果奶油蛋糕",
+						"PVTOTAL":"106w",
+						"ENSHRINE_TOTAL":"30w",
+						"PRODUCT_INFO":"草莓奶油蛋糕这款蛋糕制作难度一般，不适合新手操作，主要制作材料是新鲜草莓、蛋糕粉、乳酪，辅料和调味料需要鸡蛋、黄油、糖、香草汁、烘焙粉。",
+						"SHOP_NAME":"羊城西饼",
+						"LOGO":"/static/images/profile_photo.png",
+						"STARS":"/static/icon/star1.svg"
+					 },
+					 {
+						"KID":"1012",
+						"CATE_IMAGE":"/static/images/realtime02.png",
+						"CATENAME":"清蒸金针鱼",
+						"PVTOTAL":"100w",
+						"ENSHRINE_TOTAL":"38w",
+						"PRODUCT_INFO":"蛋白的容器须无水无油，加几滴白醋进去后，打至粗泡后分两次加入白糖，打至蛋白干性发泡",
+						"SHOP_NAME":"羊城西饼",
+						"LOGO":"/static/images/profile_photo.png",
+						"STARS":"/static/icon/star2.svg"
+					 },
+					 {
+						"KID":"1113",
+						"CATE_IMAGE":"/static/images/realtime03.png",
+						"CATENAME":"山楂银耳汤草莓水果奶油蛋糕",
+						"PVTOTAL":"285w",
+						"ENSHRINE_TOTAL":"206w",
+						"PRODUCT_INFO":"先制作蛋黄糊，如果先打好了蛋白霜再制作蛋黄糊，这中间的时间里蛋白霜有可能消泡",
+						"SHOP_NAME":"天津狗不理包子",
+						"LOGO":"/static/images/profile_photo.png",
+						"STARS":"/static/icon/star3.svg"
+					 },
+					 {
+						"KID":"1014",
+						"CATE_IMAGE":"/static/images/realtime02.png",
+						"CATENAME":"清蒸金针鱼",
+						"PVTOTAL":"100w",
+						"ENSHRINE_TOTAL":"38w",
+						"PRODUCT_INFO":"蛋白的容器须无水无油，加几滴白醋进去后，打至粗泡后分两次加入白糖，打至蛋白干性发泡",
+						"SHOP_NAME":"羊城西饼",
+						"LOGO":"/static/images/profile_photo.png",
+						"STARS":"/static/icon/star4.svg"
+					 },
+					 {
+						"KID":"1115",
+						"CATE_IMAGE":"/static/images/realtime03.png",
+						"CATENAME":"山楂银耳汤",
+						"PVTOTAL":"285w",
+						"ENSHRINE_TOTAL":"206w",
+						"PRODUCT_INFO":"先制作蛋黄糊，如果先打好了蛋白霜再制作蛋黄糊，这中间的时间里蛋白霜有可能消泡",
+						"SHOP_NAME":"天津狗不理包子",
+						"LOGO":"/static/images/profile_photo.png",
+						"STARS":"/static/icon/star5.svg"
+					 }
 				]
 			}
 		},
 		methods:{
-			localCont : function(){
-				
+			search : function(){
+				var value = this.inputValue;
+				var type = this.indexType;
+				console.info(value);
+				console.info(type);
+			},
+			onLoad(option){
+				console.info(option);//接收才参数option是json格式
+			},
+			visibleChange(isShow){
+				//console.info('isShow:', isShow);
+			},
+			change({ newVal, oldVal, index, orignItem }) {
+				//console.info(newVal, oldVal, index, orignItem);//index是索引, orignItem,所选择的值
+				this.indexType = index;
 			}
 		}
 	}
 </script>
 
 <style scoped>
-	/* 外边距,上下0，左右10 */
-	.active{
-		margin: 0 20rpx;
+	.root-container{
+		margin: 0 15rpx;
 	}
-	/* 表示内容在一行排不下时，就换行,即就往下一行排列 */
-	.conteng{
-		display: flex;/* 并排排列,让每一个view都是并排排列 */
-		flex-wrap: wrap;/* 表示内容在一行排不下时，就换行,即就往下一行排列 */
-		justify-content: space-between;/* 向两边撑开,也就是往两边排 */
-		width:100%;/* 撑满,下面的.conteng-acticle样式要结合这个来一起使用,即100/2=50% */
-		-webkit-flex-wrap:wrap;
-		overflow: hidden;/* 溢出隐藏 */
-	}
-	/* 每一个盒子,每个盒子是48%，因为 没一行要排两个view，那100%/2=50%啦 */
-	.conteng-acticle{
-		width: 48%;
-		flex-direction: column;
+	.search-container{
+		width: 100%;
+		height:78rpx;
+		line-height: 78rpx;
 		display: flex;
-		box-sizing: border-box;
+		justify-content: space-between;
+		margin-top:6rpx;
+		margin-bottom: 20rpx;
 	}
-	/* 让两个view并排排列 */
-	.purchase{
-		display: flex;/* 并排排列,让两个view并排排列 */
-		align-items: center;/* 让文字居中 */
-		padding-bottom: 10rpx;/* 离下面的距离是10 */
+	/* 下拉和输入框 */
+	.options-input{
+		display: flex;
+		width:80%;
 	}
-	/* 图片用一个view来包裹它 */
-	.conteng-img{
-		height: 400rpx !important;
-		object-fit: cover;
-		overflow: hidden;
+	/* 下拉和输入框-下拉 */
+	.view-options{
+		height: 100%;
+		width: 30%;
 	}
-	.conteng-img image{
-		width: 100% !important;
-		height: 100% !important;
-		object-fit: cover;
-		border-radius: 10rpx;
+	/* 下拉和输入框-输入框 */
+	.view-input{
+		display: block;
+		width:70%;
+		height:76rpx;
+		line-height: 76rpx;
+		padding: 0 10rpx;
+		border-bottom:1rpx solid #C0C4CC;
 	}
-	.active-name{
-		font-size: 32rpx;
-		color: #d0b083;
-		margin: 10rpx 0;
-		display: -webkit-box;
-		-webkit-box-orient:vertical;
-		-webkit-line-clamp:1;/* 仅在一行显示 */
-		overflow: hidden;
-	}
-	.active-title{
-		font-size: 32rpx;
-		color: #444444;
-		font-weight: bold;
-		line-height: 50rpx;
-		display: -webkit-box;
-		-webkit-box-orient:vertical;
-		-webkit-line-clamp:2;/* 内容再多也仅显示2行显示 */
-		text-overflow: ellipsis;/* 多出的则显示省略号 */
-		overflow: hidden;
-		height: 100rpx !important;
-	}
-	.active-label{
-		font-size: 25rpx;
-		color: #d0b083;
-		padding: 10rpx 0;
-	}
-	.active-price{
+	/* 搜索按钮 */
+	.search-button{
+		width:20%;
+		border-bottom-right-radius:14rpx;
+		border-top-right-radius:14rpx;
+		vertical-align: middle;
+		text-align: center;
 		font-size: 36rpx;
-		color: #ff6b28;
-		padding-right: 9rpx;
-	}
-	.active-purchase{
-		font-size: 30rpx;
-		color: #cacaca;
-	}
-	.active-introduce{
-		padding-left: 10rpx;
+		background:linear-gradient(to right,#ffcc66 5%,#ffcc00 100%);
 	}
 </style>
