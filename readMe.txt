@@ -4,6 +4,12 @@ details,item,list,-container,detail-describe
 category-list-container
 category-item-container,
 
+统一灰色：
+color: #808080;
+
+8a8a8a
+
+
 1、将两个view元素分左右对齐　　
 
 　　(1) display: flex;justify-content: space-between;
@@ -39,12 +45,37 @@ text-align: right;往右边排列
 text-align: end;往右边排列
 左右两个时，使用百分比
 
------限制显示几行并在多于的省略号,需要注意的是line-height行间距,而line-height是跟font-size大小有关,其值肯定要大于它-----
+6、
+.logo-name-pv image{
+	width:64rpx;
+	height:64rpx;
+	vertical-align:middle;/* 控制图片和文字在同一行对齐显示 */
+}
+
+7、图片和文字垂直居中对齐
+---------------------------------------------------------
+.container-left{
+	width: 65%;
+	height:64rpx;
+}
+.comment-head{
+	width:64rpx;
+	height:64rpx;
+	vertical-align:middle;/* 关键点 */
+}
+.comment-username{
+	font-size: 30rpx;
+	color: #808080;
+	overflow: hidden;/* 多于的隐藏 */
+}
+---------------------------------------------------------
+
+-----限制显示几行并在多于的省略号(方式1),需要注意的是line-height行间距,而line-height是跟font-size大小有关,其值肯定要大于它-----
 	font-size:30rpx;
 	height:103rpx;
 	line-height:34rpx;/* 行间距 */
-	display: -webkit-box;/* 必须 */
-	-webkit-box-orient:vertical;/* 必须 */
+	display: -webkit-box;/* 必须,少了这个不会出现… */
+	-webkit-box-orient:vertical;/* 必须,少了这个不会出现… */
 	-webkit-line-clamp:3;/* 必须 */
 	text-overflow: ellipsis;/* 必须 */
 	overflow: hidden;/* 必须 */
