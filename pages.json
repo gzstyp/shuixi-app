@@ -29,6 +29,12 @@
 			"style": {
 				"navigationBarTitleText": "菜品系列"
 			}
+		},
+		{
+			"path": "pages/list/viewCateInfo",
+			"style": {
+				"navigationBarTitleText": "菜品详情"
+			}
 		}
 	],
 	"globalStyle": {

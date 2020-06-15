@@ -1,3 +1,4 @@
+<!--菜品类别列表-item项-->
 <template>
 	<view class="category-item-container">
 		<image class="category-item-image"  :src="item.CATE_IMAGE"></image>
@@ -77,15 +78,15 @@
 		height:60rpx;
 		display: flex;
 		justify-content: space-between;
-		padding-top:2%;
+		vertical-align: middle;
 	}
 	.pv-total{
 		width: 50%;
-		height:60rpx;
+		padding-top:14rpx;
 	}
 	.enshrine-total{
 		width: 50%;
-		height:60rpx;
+		padding-top:14rpx;
 	}
 	.logo-name{
 		height:64rpx;

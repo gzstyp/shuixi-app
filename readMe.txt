@@ -141,3 +141,4 @@ methods : {
 .cell.hover {
 	background-color: #eeeeee;
 }
+页面跳转时 type =1是优选套餐;2是厨师精选;3实时新品;4热门菜系

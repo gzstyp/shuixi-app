@@ -21,7 +21,9 @@
 					imgsrc : "/static/images/index/icon/remencaixi.svg",
 					label : "热门菜系",
 					objects : {
-						"kid":"11000"
+						"type":4,
+						"label" : '热门菜系',
+						"handler" : null
 					}
 				},
 				listData : [

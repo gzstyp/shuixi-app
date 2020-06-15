@@ -7,7 +7,7 @@
 					<image :src="item.CATE_IMAGE" mode="aspectFill"></image>
 				</view>
 				<view class="catename-star">
-					<view  @click="localCont(index)" class="catename">{{item.CATENAME}}</view>
+					<view  @click="viewInfoByName(item.KID)" class="catename">{{item.CATENAME}}</view>
 					<image class="star" :src="item.STARS"/>
 				</view>
 				<browseEnshrine :item="item"></browseEnshrine>
@@ -33,8 +33,10 @@
 			return {}
 		},
 		methods:{
-			localCont : function(index){
-				console.info(index);
+			viewInfoByName : function(kid){
+				uni.navigateTo({
+				    url: '/pages/list/viewCateInfo?type=4&kid'+kid
+				});
 			}
 		}
 	}

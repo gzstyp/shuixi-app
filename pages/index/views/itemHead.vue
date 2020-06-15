@@ -18,7 +18,14 @@
 				var _itemData = this.itemData;
 				if(_itemData){
 					var objects = _itemData.objects;
-					hints.info(objects.kid);
+					var type = objects.type;
+					if(type != 1){
+						uni.navigateTo({
+						    url: '/pages/search/index?type='+type
+						});
+					}else{
+						hints.info(objects.label);
+					}
 				}else{
 					hints.info('获取数据失败');
 				}

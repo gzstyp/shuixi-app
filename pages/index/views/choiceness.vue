@@ -6,8 +6,8 @@
 			<view class="prefer-dis">
 				<block v-for="(item,index) in preferData" :key="index">
 					<view class="prefer-view">
-						<image :src="item.image" mode="aspectFill"/>
-						<text>{{item.name}}</text>
+						<image :src="item.IMAGE" mode="aspectFill"/>
+						<text @click="viewInfoByName(item.KID)">{{item.CATENAME}}</text>
 					</view>
 				</block>
 			</view>
@@ -28,29 +28,37 @@
 					imgsrc : "/static/images/index/icon/chushijingxuan.svg",
 					label : "厨师精选",
 					objects : {
-						"kid":"15120"
+						"type":2,
+						"label" : '厨师精选',
+						"handler" : null
 					}
 				},
 				preferData : [
 					{
-						"kid":"100001",
-						"name":"澳洲牛排",
-						"image":"/static/images/index/choiceness1.png"
+						"KID":"100001",
+						"CATENAME":"澳洲牛排",
+						"IMAGE":"/static/images/index/choiceness1.png"
 					},
 					{
-						"kid":"100002",
-						"name":"哈萨里披萨",
-						"image":"/static/images/index/choiceness2.png"
+						"KID":"100002",
+						"CATENAME":"哈萨里披萨",
+						"IMAGE":"/static/images/index/choiceness2.png"
 					},
 					{
-						"kid":"100003",
-						"name":"清蒸大闸蟹",
-						"image":"/static/images/index/choiceness3.png"
+						"KID":"100003",
+						"CATENAME":"清蒸大闸蟹",
+						"IMAGE":"/static/images/index/choiceness3.png"
 					}
 				]
 			}
 		},
-		methods:{},
+		methods:{
+			viewInfoByName : function(kid){
+				uni.navigateTo({
+				    url: '/pages/list/viewCateInfo?type=2&kid'+kid
+				});
+			}
+		},
 		created(){
 		}
 	}

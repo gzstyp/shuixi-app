@@ -24,7 +24,9 @@
 					imgsrc : "/static/images/index/icon/shishixinpin.svg",
 					label : "实时新品",
 					objects : {
-						"kid":"11024"
+						"type":3,
+						"label" : '实时新品',
+						"handler" : null
 					}
 				},
 				productDatas : [

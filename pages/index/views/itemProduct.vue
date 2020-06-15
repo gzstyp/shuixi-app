@@ -4,7 +4,7 @@
 		<image class="details-left" :src="item.CATE_IMAGE" mode="aspectFill"/>
 		<view class="details-right">
 			<view class="catename-before">
-				<view class="catename-before-left oneline">{{item.CATENAME}}</view>
+				<view class="catename-before-left oneline" @click="viewInfoByName(item.KID)">{{item.CATENAME}}</view>
 				<view class="catename-before-right oneline">{{item.BEFORE || '1分钟'}}前</view>
 			</view>
 			<browseEnshrine :item="item"></browseEnshrine>
@@ -34,8 +34,10 @@
 			}
 		},
 		methods:{
-			enshrineProduct : function(kid){
-				hints.info(kid);
+			viewInfoByName : function(kid){
+				uni.navigateTo({
+				    url: '/pages/list/viewCateInfo?type=3&kid'+kid
+				});
 			}
 		}
 	}

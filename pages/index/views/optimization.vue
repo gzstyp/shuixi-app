@@ -6,8 +6,8 @@
 			<view class="prefer-dis">
 				<block v-for="(item,index) in preferData" :key="index">
 					<view class="prefer-view">
-						<image :src="item.image" mode="aspectFill"/>
-						<text>{{item.name}}</text>
+						<image :src="item.IMAGE" mode="aspectFill"/>
+						<text>{{item.CATENAME}}</text>
 					</view>
 				</block>
 			</view>
@@ -28,25 +28,27 @@
 					imgsrc : "/static/images/index/icon/youxuantaocan.svg",
 					label : "优选套餐",
 					objects : {
-						"kid":"12048"
+						"type":1,
+						"label" : '优选套餐',
+						"handler" : null
 					}
 				},
 				preferData : [
 					{
-						"name":"红烧肉(1-2套餐)",
-						"image":"/static/images/scroll-view-01.png"
+						"CATENAME":"红烧肉(1-2套餐)",
+						"IMAGE":"/static/images/scroll-view-01.png"
 					},
 					{
-						"name":"红烧狮子头(3-5人套餐)",
-						"image":"/static/images/scroll-view-02.png"
+						"CATENAME":"红烧狮子头(3-5人套餐)",
+						"IMAGE":"/static/images/scroll-view-02.png"
 					},
 					{
-						"name":"清蒸鲈鱼(3-5人套餐)",
-						"image":"/static/images/scroll-view-03.png"
+						"CATENAME":"清蒸鲈鱼(3-5人套餐)",
+						"IMAGE":"/static/images/scroll-view-03.png"
 					},
 					{
-						"name":"剁椒鱼头(4-7人套餐)",
-						"image":"/static/images/scroll-view-04.png"
+						"CATENAME":"剁椒鱼头(4-7人套餐)",
+						"IMAGE":"/static/images/scroll-view-04.png"
 					}
 				]
 			}
