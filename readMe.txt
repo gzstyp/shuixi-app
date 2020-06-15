@@ -70,6 +70,19 @@ text-align: end;往右边排列
 }
 ---------------------------------------------------------
 
+*********************************************************
+.container-line{
+    width:50%;
+    height:64rpx;
+}
+.line-image{
+    margin-top: 7rpx;/* (64-50)/2=7 除以2*/
+    width:50rpx;
+    height:50rpx;
+    vertical-align:middle;
+}
+*********************************************************
+
 -----限制显示几行并在多于的省略号(方式1),需要注意的是line-height行间距,而line-height是跟font-size大小有关,其值肯定要大于它-----
 	font-size:30rpx;
 	height:103rpx;
@@ -102,7 +115,7 @@ data () {
 			"kid":"2048"
 		}
 	}
-},	
+},
 传值(item-head的vue文件是itemHead.vue):
 <item-head ref="itemViewHead" :imgsrc="imgsrc" :label="label" :objects="objects"></item-head>,其中imgsrc是不能随便取随呢!!!
 
