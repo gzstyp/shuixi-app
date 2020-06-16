@@ -3,7 +3,7 @@
 	<view class="category-item-container">
 		<image class="category-item-image"  :src="item.CATE_IMAGE"></image>
 		<view class="name-star-pv">
-			<view class="left-name-star">{{item.CATENAME}}</view>
+			<view class="left-name-star" @click="viewInfoByType(item.KID)">{{item.CATENAME}}</view>
 			<image class="middle-star" :src="item.STARS"></image>
 			<view class="right-pv">
 				<viewPv class="pv-total" :item="item"></viewPv>
@@ -31,7 +31,14 @@
 		data() {
 			return {}
 		},
-		methods:{}
+		methods:{
+			viewInfoByType : function(kid){
+				console.info(kid + ':5')
+				uni.navigateTo({
+				    url: '/pages/list/viewCateInfo?type=5&kid'+kid
+				});
+			}
+		}
 	}
 </script>
 

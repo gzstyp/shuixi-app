@@ -4,10 +4,11 @@ details,item,list,-container,detail-describe
 category-list-container
 category-item-container,
 
+页面跳转时 type =1是优选套餐;2是厨师精选;3实时新品;4热门菜系;5菜品分类列表
+
 统一灰色：
 color: #808080;
 
-8a8a8a
 
 
 1、将两个view元素分左右对齐　　
@@ -185,4 +186,17 @@ methods : {
 .cell.hover {
 	background-color: #eeeeee;
 }
-页面跳转时 type =1是优选套餐;2是厨师精选;3实时新品;4热门菜系
+
+水平拆分:
+.info-bottom-collect{
+	width: 50%;
+	background: #333334;
+	color: #FFFFFF;
+	text-align: center;
+}
+.info-bottom-transpond{
+	width: 50%;
+	background:#F19149;
+	color: #FFFFFF;
+	text-align: center;
+}
