@@ -1,4 +1,4 @@
-<!--菜品详细信息-评论和回复-->
+<!--菜品详细信息-评论和回复-item-->
 <template>
 	<view class="info-item-container">
 		<image class="info-item-left" :src="item.CATE_IMAGE"></image>

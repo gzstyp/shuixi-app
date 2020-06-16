@@ -1,3 +1,4 @@
+<!--菜品详细信息-评论的头部信息-->
 <template>
 	<view>
 		<block v-for="(item,index) in comments" :key="index">
