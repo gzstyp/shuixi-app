@@ -9,8 +9,6 @@ category-item-container,
 统一灰色：
 color: #808080;
 
-
-
 1、将两个view元素分左右对齐　　
 
 　　(1) display: flex;justify-content: space-between;
@@ -138,6 +136,121 @@ css:
 	overflow: hidden;
 }
 -------------------------------------让文字绝对的居中且多余的字数出现省略号-------------------------------------
+10、
+左右两边
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+<view class="container-left-right">
+	<view class="container-view-left"></view>
+	<view class="container-view-right">125</view>
+</view>
+
+.container-left-right{
+   width: 100%;
+   height: 100rpx;
+   display: flex;
+   justify-content: space-between;
+}
+.container-view-left{
+   height: 100rpx;
+   line-height:100rpx;
+   align-self: center;
+   background: #C0C0C0;
+   width: 70%;
+}
+.container-view-right{
+   height: 100rpx;
+   line-height:100rpx;
+   background: #c0a7ba;
+   width: 30%;
+}
+***********************************华丽的分隔线***********************************
+view:
+<view class="container-left-right">
+<view class="container-view-left">
+	<image :src="infoData.PHOTO"></image>
+	<view class="show-label">
+		<text>{{infoData.AUTHOR}}</text>
+	</view>
+</view>
+<view class="container-view-right">
+	<view class="right-label">
+		<text>全部评论({{infoData.COMMENT_TOTAL || '0'}})</text>
+	</view>
+	<view class="next-more">
+		<image src="/static/icon/icon_more_normal.svg"></image>
+	</view>
+</view>
+</view>
+css:
+/* 左右两边布局的容器 */
+.container-left-right{
+   width: 100%;
+   height: 100rpx;
+   display: flex;
+   justify-content: space-between;
+}
+/* 左右两边-左边 */
+.container-view-left{
+   height: 100rpx;
+   line-height:100rpx;
+   background: #C0C0C0;
+   width: 60%;
+   display: flex;
+   justify-content: flex-start;
+}
+/* 左右两边-左边->图标|图片 */
+.container-view-left image{
+   height: 100rpx;
+   width: 100rpx;
+   text-align: center;
+}
+/* 左右两边-左边->文字内容 */
+.show-label{
+   font-size: 35rpx;
+   display: -webkit-box;
+   -webkit-box-orient:vertical;
+   -webkit-line-clamp:1;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+/* 左右两边-右边 */
+.container-view-right{
+   height: 100rpx;
+   line-height:100rpx;
+   background: #c0a7ba;
+   width: 40%;
+   display: flex;
+   justify-content: flex-end;
+}
+/* 左右两边-右边->文字内容 */
+.container-view-right text{
+   font-size:35rpx;
+   color: #bfbfbf;
+}
+/* 左右两边-右边->(图标图片)-容器 */
+.next-more{
+	height: 100rpx;
+	line-height:100rpx;
+	background: #92ff79;
+	vertical-align: middle;
+}
+/* 左右两边-右边->图标图片*/
+.next-more image{
+   width: 50rpx;
+   height: 50rpx;
+   vertical-align: middle;
+}
+/* 左右两边-右边->文字内容*/
+.right-label{
+   font-size: 35rpx;
+   display: -webkit-box;
+   -webkit-box-orient:vertical;
+   -webkit-line-clamp:1;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+***********************************华丽的分隔线***********************************
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 ****************************************布局思路****************************************
 <view class="left-title">
 	<view class="view-text-container">
