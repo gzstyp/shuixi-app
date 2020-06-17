@@ -83,17 +83,76 @@ text-align: end;往右边排列
     vertical-align:middle;
 }
 *********************************************************
+8、
 
+align-items: center;
+justify-content: center;
+
+vertical-align: middle;/* 垂直居中 */
+text-align: center;/* 水平居中 */
+		
 -----限制显示几行并在多于的省略号(方式1),需要注意的是line-height行间距,而line-height是跟font-size大小有关,其值肯定要大于它-----
 	font-size:30rpx;
 	height:103rpx;
 	line-height:34rpx;/* 行间距 */
 	display: -webkit-box;/* 必须,少了这个不会出现… */
 	-webkit-box-orient:vertical;/* 必须,少了这个不会出现… */
-	-webkit-line-clamp:3;/* 必须 */
+	-webkit-line-clamp:1;/* 必须 */
 	text-overflow: ellipsis;/* 必须 */
 	overflow: hidden;/* 必须 */
 -----限制显示几行并在多于的省略号,需要注意的是line-height行间距,而line-height是跟font-size大小有关,其值肯定要大于它-----
+
+9、
+-------------------------------------让文字绝对的居中且多余的字数出现省略号-------------------------------------
+view:
+<view class="pv-container">
+	<image class="left-icon" src="/static/images/eye_normal.svg"></image>
+	<view class="view-pv">
+		<text class="pv-text">{{item.PVTOTAL || '1'}}浏览</text>
+	</view>
+</view>
+css:
+.pv-container{
+	background: #9dcc94;
+	width: 35%;
+	display: flex;
+	justify-content: flex-start;
+}
+.left-icon{
+	width: 36rpx;
+	height: 36rpx;
+	margin-top: 15rpx;
+}
+.view-pv{
+	height: 68rpx;
+	line-height: 68rpx;
+	vertical-align: middle;
+}
+.pv-text{
+	color: #808080;
+	font-size: 28rpx;
+	display: -webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:1;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+-------------------------------------让文字绝对的居中且多余的字数出现省略号-------------------------------------
+****************************************布局思路****************************************
+<view class="left-title">
+	<view class="view-text-container">
+		<text class="text-title">{{item.TITLE}}</text>
+	</view>
+	<view class="pv-container">
+		<image class="left-icon" src="/static/images/eye_normal.svg"></image>
+		<view class="view-pv">
+			<text class="pv-text">{{item.PVTOTAL || '1'}}浏览</text>
+		</view>
+	</view>
+</view>
+****************************************布局思路****************************************
+
+
 //1.导入子组件
 import search from './views/search.vue';
 //2.注册组件
@@ -200,3 +259,9 @@ methods : {
 	color: #FFFFFF;
 	text-align: center;
 }
+
+带变量:
+uni.showToast({
+	title: `点击第${index+1}个宫格`,
+	icon: 'none'
+});

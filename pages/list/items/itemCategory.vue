@@ -35,7 +35,7 @@
 			viewInfoByType : function(kid){
 				console.info(kid + ':5')
 				uni.navigateTo({
-				    url: '/pages/list/viewCateInfo?type=5&kid'+kid
+				    url: '/pages/list/viewCateInfo?type=5&kid='+kid
 				});
 			}
 		}

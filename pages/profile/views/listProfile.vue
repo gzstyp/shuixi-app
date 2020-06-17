@@ -1,54 +1,20 @@
 <template>
-	<view class="profile-root-container">
-		<slideshow></slideshow>
-		<view class="icon-text-show">
-			<block v-for="(item,index) in proListData" :key="index">
-				<view @click="listProfile(item.KID)">
-					<image class="view-icon-image" :src="item.ICON"></image>
-					<view class="view-icon-text">{{item.LABEL}}</view>
-				</view>
-			</block>
-		</view>
-		<view class="hot-label">
-			<view class="block-hot"></view>
-			<text>热门推荐</text>
-		</view>
-		<view class="profile-list-hot">
-			<block v-for="(item,index) in hotListData" :key="index">
-				<itemProfileHot :item="item"></itemProfileHot>
-			</block>
-		</view>
+	<view class="profile-list-hot">
+		<block v-for="(item,index) in hotListData" :key="index">
+			<itemProfileHot :item="item"></itemProfileHot>
+		</block>
 	</view>
 </template>
 
 <script>
-	import slideshow from './views/slideshow.vue'
-	import itemProfileHot from './views/item/itemProfileHot.vue'
-	export default {
+	import itemProfileHot from './item/itemProfileHot.vue'
+	export default{
 		components: {
-			slideshow,
 			itemProfileHot
 		},
+		props : {},
 		data() {
 			return {
-				proListData : [
-					{
-						"KID":"10101",
-						"ICON":"/static/images/profile/icon01.png",
-						"LABEL":"历史"
-						
-					},
-					{
-						"KID":"10102",
-						"ICON":"/static/images/profile/icon02.png",
-						"LABEL":"人文"
-					},
-					{
-						"KID":"10103",
-						"ICON":"/static/images/profile/icon03.png",
-						"LABEL":"风貌"
-					}
-				],
 				hotListData : [
 					{
 						"KID":"102401",
@@ -81,55 +47,16 @@
 				]
 			}
 		},
-		methods: {
-			listProfile : function(kid){
-				uni.navigateTo({
-				    url : '/pages/profile/views/listProfile?kid='+kid
-				});
-			}
+		methods:{},
+		onLoad(options) {
+			console.info(options);
 		}
 	}
 </script>
 
 <style scoped>
-	view {
-		font-size: 32rpx;
-		line-height: inherit;
-	}
-	.profile-root-container{
-		margin: 0 15rpx;
-	}
-	.icon-text-show{
-		display: flex;
-		justify-content: space-around;
-		margin: 20rpx 0;
-	}
-	.view-icon-image{
-		height: 116rpx;
-		width: 116rpx;
-	}
-	.view-icon-text{
-		text-align: center;
-		font-size: 36rpx;
-	}
-	.hot-label{
-		display: flex;
-		justify-content: flex-start;
-	}
-	.block-hot{
-		height: 40rpx;
-		width: 14rpx;
-		background: #FEB82B;
-	}
-	.hot-label text{
-		height: 40rpx;
-		line-height: 40rpx;
-		font-size: 36rpx;
-		margin-left: 20rpx;
-		font-weight: bold;
-		display: block;
-	}
 	.profile-list-hot{
 		margin-top:26rpx;
+		margin-bottom: 20rpx;
 	}
 </style>

@@ -35,6 +35,18 @@
 			"style": {
 				"navigationBarTitleText": "菜品详情"
 			}
+		},
+		{
+			"path": "pages/info/profileInfo",
+			"style": {
+				"navigationBarTitleText": "内容详细"
+			}
+		},
+		{
+			"path": "pages/profile/views/listProfile",
+			"style": {
+				"navigationBarTitleText": "水西天香"
+			}
 		}
 	],
 	"globalStyle": {

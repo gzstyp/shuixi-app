@@ -11,7 +11,7 @@
 			<block v-for="(item,index) in slideList" :key="index">
 				<swiper-item>
 					<view class="swiper-item" @click="localCont()">
-						<image :src="item.image" mode="aspectFill" class="imageurl"></image>
+						<image :src="item.IMAGE" mode="aspectFill" class="imageurl"></image>
 					</view>
 				</swiper-item>
 			</block>
@@ -25,19 +25,19 @@
 			return {
 				slideList : [
 					{
-						"kid" : "100001",
-						"name" : "水西公园夜景",
-						"image" : "/static/images/profile/banner1.png"
+						"KID" : "100001",
+						"NAME" : "水西公园夜景",
+						"IMAGE" : "/static/images/profile/banner1.png"
 					},
 					{
-						"kid" : "100002",
-						"name" : "人间仙境",
-						"image" : "/static/images/profile/banner2.png"
+						"KID" : "100002",
+						"NAME" : "人间仙境",
+						"IMAGE" : "/static/images/profile/banner2.png"
 					},
 					{
-						"kid" : "100003",
-						"name" : "美翻了,我的水西",
-						"image" : "/static/images/profile/banner3.png"
+						"KID" : "100003",
+						"NAME" : "美翻了,我的水西",
+						"IMAGE" : "/static/images/profile/banner3.png"
 					}
 				]
 			}
@@ -51,14 +51,11 @@
 </script>
 
 <style scoped>
-	swiper{
-		margin-top: 10rpx;
-	}
 	.imageurl{
 		width: 100%;
 		height: 320rpx !important;/* 提高层级 */
 	}
 	.swiper{
-		height: 320rpx !important;/* 提高层级 */
+		height: 320rpx !important;
 	}
 </style>

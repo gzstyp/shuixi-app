@@ -36,7 +36,7 @@
 		methods:{
 			viewInfoByName : function(kid){
 				uni.navigateTo({
-				    url: '/pages/list/viewCateInfo?type=3&kid'+kid
+				    url: '/pages/list/viewCateInfo?type=3&kid='+kid
 				});
 			}
 		}
