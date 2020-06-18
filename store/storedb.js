@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
-const store = new Vuex.Store({
+const storedb = new Vuex.Store({
     state : {
         login : false,
         token : '',
         avatarUrl : '/static/icon/icon_user_photo_default.svg',
         userName : 'yinlz',
 		nickName : "引路者",
-		shops : false
+		shops : false/* 是否是商家 */
     },
     mutations : {
         login(state,provider){
@@ -26,4 +26,4 @@ const store = new Vuex.Store({
     },
     actions: {}
 });
-export default store;
+export default storedb;

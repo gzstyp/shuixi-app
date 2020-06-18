@@ -5,9 +5,9 @@
 				<view class="box">
 					<view class="box-hd">
 						<view class="avator" @click="goLogin" :hover-class="!storedb.state.login ? 'logo-hover' : ''">
-							<image :src="storedb.state.avatarUrl"></image>
+							<image :src="userInfo.photo"></image>
 						</view>
-						<view class="phone-number">{{storedb.state.nickName}}</view>
+						<view class="nick-name">{{userInfo.nickName}}</view>
 					</view>
 					<view class="box-bd">
 						<view class="item" hover-class="my-hover-class">
@@ -50,17 +50,17 @@
 					<view class="text">分享小程序</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="storedb.state.shops">
+				<view class="li" v-if="userInfo.shops">
 					<view class="icon"><image src="/static/icon/icon_regsiter.svg"></image></view>
 					<view class="text">商家入驻</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="storedb.state.shops">
+				<view class="li" v-if="userInfo.shops">
 					<view class="icon"><image src="/static/icon/icon_cate_upload.svg"></image></view>
 					<view class="text">菜谱上传</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="storedb.state.shops">
+				<view class="li" v-if="userInfo.shops">
 					<view class="icon"><image src="/static/icon/icon_self_control_menu.svg"></image></view>
 					<view class="text">自制菜品</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
@@ -92,17 +92,23 @@
 <script>
 	export default {
 		data() {
-			return {}
+			return {
+				userInfo : {
+					photo : null,
+					nickName : null,
+					shops : false
+				}
+			}
 		},
-		onLoad() {
-			var photo1 = this.storedb.state;
-			var nickName = this.storedb.state.nickName;
-			console.info(photo1);
-			console.info(nickName);
+		onLoad(){
+			this.userInfo.photo = this.storedb.state.avatarUrl;
+			this.userInfo.nickName = this.storedb.state.nickName;
+			this.userInfo.shops = this.storedb.state.shops;
 		},
 		methods: {
-			goLogin() {
-				if (!this.storedb.login) {
+			goLogin(){
+				var _login = this.storedb.state.login;
+				if (!_login){
 					console.log("点击前往登录");
 				}
 			},
@@ -154,7 +160,7 @@
 					height: 100%;
 				}
 			}
-			.phone-number{
+			.nick-name{
 				width: 100%;
 				text-align: center;
 			}
