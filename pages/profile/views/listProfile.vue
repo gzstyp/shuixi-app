@@ -1,3 +1,4 @@
+<!-- 历史|人文|风貌的类别文章列表 -->
 <template>
 	<view class="profile-list-hot">
 		<block v-for="(item,index) in hotListData" :key="index">

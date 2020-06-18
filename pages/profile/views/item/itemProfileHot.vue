@@ -1,3 +1,4 @@
+<!-- 历史|人文|风貌下边的热门推荐 -->
 <template>
 	<view class="item-profile-container">
 		<image class="item-profile-image" :src="item.IMAGE"></image>

@@ -30,7 +30,7 @@
 				<view class="container-view-left">
 					<image :src="infoData.PHOTO"></image>
 					<view class="show-label">
-						<text>{{infoData.AUTHOR}}</text>
+						<text>{{infoData.NICKNAME}}</text>
 					</view>
 				</view>
 				<view class="container-view-right" @click="allComment()">
@@ -43,7 +43,26 @@
 				</view>
 			</view>
 			<view class="view-comment-describe">
-				<text>{{infoData.COMMENT_DESCRIBE}}</text>
+				<text>{{infoData.COMMENT}}</text>
+			</view>
+		</view>
+		<view class="line_gray"></view>
+		<view class="profile-container">
+			<view class="block-label-container">
+				<view class="container-block"></view>
+				<text class="container-label">猜你喜欢</text>
+			</view>
+			<view class="pro-view-recommend">
+				<scroll-view scroll-x="true" class="scroll" scroll-with-animation="true">
+					<view class="horizontal-roll-container">
+						<block v-for="(item,index) in listRecommend" :key="index">
+							<view class="horizontal-roll-item" @click="reloadPage(item.KID,item.TITLE,item.IMAGE)">
+								<image :src="item.IMAGE" mode="aspectFill"/>
+								<text>{{item.TITLE}}</text>
+							</view>
+						</block>
+					</view>
+				</scroll-view>
 			</view>
 		</view>
 	</view>
@@ -63,16 +82,46 @@
 					"BROWSE":"101",
 					"FOLLOW":"2w",
 					"DETAILS":"总体规划的原则是：依山就势、因地制宜；城随水转、水绕城流；户户养花、人人嬉水，实现古城建设与自然环境的完美结合。同时确保古城具备文化展示、商务会展、旅游接待、观光娱乐、商业贸易、文艺展演等功能，使之成为涵盖吃、住、行，游、购、娱为一体的综合旅游风景区。在设计风格上，做到古代水西古建风格、以彝族建筑为主的民族建筑风格、黔西北民居建筑风格三种风格相结合，同时镶嵌独树一帜的古城门楼、四蛙神鼓、牌坊、寨门、彝族十月太阳历广场、水西传奇实景舞台、木结构旅游小品房等，形成“十步一个故事，百步一段历史”的民族文化旅游古镇。",
-					"AUTHOR":"旅行者",
+					"NICKNAME":"旅行者",
 					"PHOTO":"/static/head/user_image01.png",
 					"COMMENT_TOTAL":"1002",
-					"COMMENT_DESCRIBE":"很美的一道风景，那里的人都很热情，很多很多的好吃的，当然好玩的也不少，下次带着家人一起"
-				}
+					"COMMENT":"很美的一道风景，那里的人都很热情，很多很多的好吃的，当然好玩的也不少，下次带着家人一起"
+				},
+				listRecommend : [
+					{
+						"KID":"100021",
+						"TITLE":"水西宣慰府",
+						"IMAGE" : "/static/images/profile/recommend01.png"
+					},
+					{
+						"KID":"100022",
+						"TITLE":"水西公园夜景",
+						"IMAGE" : "/static/images/profile/recommend02.png"
+					},
+					{
+						"KID":"100023",
+						"TITLE":"水西公园",
+						"IMAGE" : "/static/images/profile/recommend03.jpg"
+					},
+					{
+						"KID":"100024",
+						"TITLE":"水西城某处",
+						"IMAGE" : "/static/images/profile/recommend04.jpg"
+					}
+				]
 			}
 		},
 		methods:{
 			allComment : function(){
-				console.info('全部评论');
+				uni.navigateTo({
+				    url : '/pages/profile/views/listRecomment?kid='+this.params.kid
+				});
+			},
+			reloadPage : function(kid,title,image){
+				/* 重新加载当前页面 */
+				uni.redirectTo({
+					url : '/pages/info/profileInfo?type=1&kid='+kid+'&title='+title+'&image='+image
+				})
 			}
 		},
 		onLoad(options){
@@ -84,7 +133,7 @@
 <style scoped>
 	/* 最外层 */
 	.profile-info-root{
-		margin-bottom: 10rpx;
+		margin-bottom: 0rpx;
 	}
 	/* 顶部的图片 */
 	.profile-image{
@@ -263,5 +312,32 @@
 		-webkit-line-clamp:4;
 		text-overflow: ellipsis;
 		overflow: hidden;
+		margin-bottom: 20rpx;
    }
+   .line_gray{
+	   height: 16rpx;
+	   width: 100%;
+	   background: #808080;
+	   margin-bottom: 18rpx;
+   }
+   .pro-view-recommend{
+	   margin-top: 18rpx;
+   }
+   /* 水平滚动*/
+   .horizontal-roll-container{display: flex;justify-content: space-between;}
+   .horizontal-roll-item{height: 266rpx;width: 300rpx; padding: 0 8rpx;}
+   .horizontal-roll-item image{width: 300rpx;height: 200rpx;border-radius: 10rpx;}
+   .horizontal-roll-item text{
+		height: 45rpx;
+		line-height: 45rpx;
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+		-webkit-line-clamp:1;
+		text-overflow: ellipsis;
+		overflow: hidden;
+   }
+   /* 伪元素处理,其中的nth-child(1)是 image 标签 */
+   .horizontal-roll-item text:nth-child(2){font-size: 32rpx;align-items: center;}
+   /* 伪元素处理,表示的是从第2个元素开始是上下间距是0,左右间距是7rpx */
+   .horizontal-roll-item:nth-child(2){padding:0 7rpx !important;}
 </style>

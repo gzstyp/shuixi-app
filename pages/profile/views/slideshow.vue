@@ -55,7 +55,7 @@
 		width: 100%;
 		height: 320rpx !important;/* 提高层级 */
 	}
-	.swiper{
+	swiper{
 		height: 320rpx !important;
 	}
 </style>

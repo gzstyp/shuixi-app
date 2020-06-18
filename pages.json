@@ -47,6 +47,12 @@
 			"style": {
 				"navigationBarTitleText": "水西天香"
 			}
+		},
+		{
+			"path": "pages/profile/views/listRecomment",
+			"style": {
+				"navigationBarTitleText": "全部评论"
+			}
 		}
 	],
 	"globalStyle": {

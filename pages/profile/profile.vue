@@ -9,9 +9,9 @@
 				</view>
 			</block>
 		</view>
-		<view class="hot-label">
-			<view class="block-hot"></view>
-			<text>热门推荐</text>
+		<view class="block-label-container">
+			<view class="container-block"></view>
+			<text class="container-label">热门推荐</text>
 		</view>
 		<view class="profile-list-hot">
 			<block v-for="(item,index) in hotListData" :key="index">
