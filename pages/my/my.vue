@@ -4,10 +4,10 @@
 			<view class="bg">
 				<view class="box">
 					<view class="box-hd">
-						<view class="avator">
-							<image src="/static/icon/icon_user_photo.svg" mode="widthFix"></image>
+						<view class="avator" @click="goLogin" :hover-class="!storedb.state.login ? 'logo-hover' : ''">
+							<image :src="storedb.state.avatarUrl"></image>
 						</view>
-						<view class="phone-number">羊城西饼</view>
+						<view class="phone-number">{{storedb.state.nickName}}</view>
 					</view>
 					<view class="box-bd">
 						<view class="item" hover-class="my-hover-class">
@@ -50,17 +50,17 @@
 					<view class="text">分享小程序</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="shops">
+				<view class="li" v-if="storedb.state.shops">
 					<view class="icon"><image src="/static/icon/icon_regsiter.svg"></image></view>
 					<view class="text">商家入驻</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="shops">
+				<view class="li" v-if="storedb.state.shops">
 					<view class="icon"><image src="/static/icon/icon_cate_upload.svg"></image></view>
 					<view class="text">菜谱上传</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="shops">
+				<view class="li" v-if="storedb.state.shops">
 					<view class="icon"><image src="/static/icon/icon_self_control_menu.svg"></image></view>
 					<view class="text">自制菜品</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
@@ -92,14 +92,19 @@
 <script>
 	export default {
 		data() {
-			return {
-				"shops" : false
-			}
+			return {}
 		},
 		onLoad() {
+			var photo1 = this.storedb.state;
+			var nickName = this.storedb.state.nickName;
+			console.info(photo1);
+			console.info(nickName);
 		},
 		methods: {
-			changeSkin(){
+			goLogin() {
+				if (!this.storedb.login) {
+					console.log("点击前往登录");
+				}
 			},
 		}
 	}
@@ -130,7 +135,7 @@
 		border-radius: 20rpx;
 		margin: 0 auto;
 		background: #fff;
-		box-shadow: 0 5rpx 20rpx 0rpx rgba(0, 0, 150, .2); 
+		box-shadow: 0 5rpx 20rpx 0rpx rgba(0, 0, 150, .2);
 		.box-hd{
 			display: flex;
 			flex-wrap: wrap;
@@ -144,7 +149,7 @@
 				border-radius: 50%;
 				margin-top: -80rpx;
 				overflow: hidden;
-				img{
+				image{
 					width: 100%;
 					height: 100%;
 				}
