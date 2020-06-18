@@ -19,6 +19,18 @@
 			}
 		},
 		{
+			"path": "pages/my/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/my/editInfo",
+			"style": {
+				"navigationBarTitleText": "编辑资料"
+			}
+		},
+		{
 			"path": "pages/search/index",
 			"style": {
 				"navigationBarTitleText": "菜品|搜索"

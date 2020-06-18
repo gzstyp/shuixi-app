@@ -28,7 +28,7 @@
 		</view>
 		<view class="list-content">
 			<view class="list">
-				<view class="li noborder" >
+				<view class="li noborder" @click="editInfo()">
 					<view class="icon"><image src="/static/icon/icon_card.svg"></image></view>
 					<view class="text">编辑资料</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
@@ -108,10 +108,25 @@
 		methods: {
 			goLogin(){
 				var _login = this.storedb.state.login;
-				if (!_login){
-					console.log("点击前往登录");
+				if(!_login){
+					this.login();
 				}
 			},
+			editInfo : function(){
+				var _login = this.storedb.state.login;
+				if(!_login){
+					this.login();
+				}else{
+					uni.navigateTo({
+					    url : '/pages/my/editInfo?type=1'
+					});
+				}
+			},
+			login : function(){
+				uni.navigateTo({
+				    url : '/pages/my/login?type=1'
+				});
+			}
 		}
 	}
 </script>
