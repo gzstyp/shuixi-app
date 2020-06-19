@@ -93,7 +93,7 @@
 	/* 新品介绍 */
 	.container-describe{
 		width: 100%;
-		height:92rpx;
+		height:90rpx;
 	}
 	.text-describe{
 		font-size:30rpx;
