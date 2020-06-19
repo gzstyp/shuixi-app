@@ -43,7 +43,6 @@
 		width: 100%;
 		justify-content:center;
 		align-items:Center;
-		background: #EFEFF4;
 	}
 	.diandiandidi{
 		font-size: 35rpx;
@@ -51,6 +50,5 @@
 		font-weight: bold;
 		align-items: center;
 		justify-content:center;
-		background:#909090;
 	}
 </style>
