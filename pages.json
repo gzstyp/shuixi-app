@@ -31,6 +31,12 @@
 			}
 		},
 		{
+			"path": "pages/my/help",
+			"style": {
+				"navigationBarTitleText": "帮助中心"
+			}
+		},
+		{
 			"path": "pages/search/index",
 			"style": {
 				"navigationBarTitleText": "菜品|搜索"

@@ -10,7 +10,7 @@ Vue.use(toolHttp);//挂载方式1
 Vue.prototype.getDatas = function(){};
 
 //引入含vuex的文件
-import storedb from './store/storedb.js'
+import storedb from './store/storedb.js';
 //把vuex定义成全局组件
 Vue.prototype.storedb = storedb;//挂载方式2[含vuex(属性???)]
 

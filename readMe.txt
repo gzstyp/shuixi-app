@@ -19,6 +19,10 @@ color: #808080;
 
 　　父元素：display: flex;  子元素：align-self: center;
 
+	display: flex;
+	justify-content:center;
+	align-items:Center;
+
 3、水平居中　
 
 　　text-align: center; 子元素是文本（非块元素）

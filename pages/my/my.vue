@@ -65,7 +65,7 @@
 					<view class="text">自制菜品</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li">
+				<view class="li" @click="help()">
 					<view class="icon"><image src="/static/icon/icon_help.svg"></image></view>
 					<view class="text">帮助中心</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
@@ -125,6 +125,11 @@
 			login : function(){
 				uni.navigateTo({
 				    url : '/pages/my/login?type=1'
+				});
+			},
+			help : function(){
+				uni.navigateTo({
+				    url : '/pages/my/help'
 				});
 			}
 		}
