@@ -103,7 +103,7 @@
 	/* 菜品介绍 */
 	.detail-describe{
 		font-size:30rpx;
-		height:64rpx;
+		height:64rpx;/* 32x2=64 */
 		line-height:32rpx;
 		display: -webkit-box;
 		-webkit-box-orient:vertical;

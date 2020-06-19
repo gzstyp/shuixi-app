@@ -93,11 +93,11 @@
 	/* 新品介绍 */
 	.container-describe{
 		width: 100%;
-		height:90rpx;
 	}
 	.text-describe{
 		font-size:30rpx;
 		line-height:32rpx;
+		height:96rpx;/* 32x3=96 */
 		-webkit-line-clamp:3;
 	}
 </style>
