@@ -119,7 +119,7 @@
 	}
 	.detail-info{
 		font-size: 34rpx;
-		height: 105rpx;/* 3x35=105 */
+		height: 102rpx;/* 3x34=102 */
 		line-height: 35rpx;
 		padding-left: 8rpx;
 		display: -webkit-box;
