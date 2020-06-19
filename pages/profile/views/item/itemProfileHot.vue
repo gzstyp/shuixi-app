@@ -16,8 +16,8 @@
 			</view>
 			<view class="right-follow" hover-class="follow-text-hover"><text class="follow-text">关注</text></view>
 		</view>
-		<view class="detail-info" @click="viewInfo(item.KID,item.IMAGE,item.TITLE)">
-			{{item.DETAILS}}
+		<view @click="viewInfo(item.KID,item.IMAGE,item.TITLE)">
+			<text class="detail-info">{{item.DETAILS}}</text>
 		</view>
 	</view>
 </template>
@@ -111,8 +111,8 @@
 	}
 	.follow-text{
 		border: 2rpx solid #FEB82B;
-		padding: 8rpx 12rpx;
-		font-size: 30rpx;
+		padding:6rpx 10rpx;
+		font-size: 28rpx;
 	}
 	.follow-text-hover{
 		color: #000000;
