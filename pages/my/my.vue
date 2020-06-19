@@ -65,6 +65,11 @@
 					<view class="text">自制菜品</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
+				<view class="li" v-if="userInfo.shops">
+					<view class="icon"><image src="/static/icon/icon_self_control_menu.svg"></image></view>
+					<view class="text">套餐管理</view>
+					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
+				</view>
 				<view class="li" @click="help()">
 					<view class="icon"><image src="/static/icon/icon_help.svg"></image></view>
 					<view class="text">帮助中心</view>
