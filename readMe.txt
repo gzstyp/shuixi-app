@@ -9,6 +9,20 @@ category-item-container,
 统一灰色：
 color: #808080;
 
+line-height(行高) x -webkit-line-clamp(行数) = height(高度);行高推荐为字体大小的基础上加2数据值
+
+font-size(字体大小) x -webkit-line-clamp(行数) = height(高度) √
+
+******************************跟font-size有关,待调试调整******************************
+(1)、
+.detail-info{
+	font-size: 34rpx;
+	height: 108rpx;
+	line-height: 36rpx;
+	-webkit-line-clamp:3;
+}
+******************************跟font-size有关,待调试调整******************************
+
 1、将两个view元素分左右对齐　　
 
 　　(1) display: flex;justify-content: space-between;
@@ -92,10 +106,10 @@ justify-content: center;
 
 vertical-align: middle;/* 垂直居中 */
 text-align: center;/* 水平居中 */
-		
+
 -----限制显示几行并在多于的省略号(方式1),需要注意的是line-height行间距,而line-height是跟font-size大小有关,其值肯定要大于它-----
 	font-size:30rpx;
-	height:103rpx;
+	height:103rpx;/* 字体大小 x 行数 */
 	line-height:34rpx;/* 行间距 */
 	display: -webkit-box;/* 必须,少了这个不会出现… */
 	-webkit-box-orient:vertical;/* 必须,少了这个不会出现… */
@@ -268,7 +282,12 @@ css:
 	</view>
 </view>
 ****************************************布局思路****************************************
-
+12、
+.button-container{
+	text-align: center;/* 让文字水平居中 */
+	display: flex;/* 弹性布局 */
+	justify-content: center;/* 让容器水平居中 */
+}
 
 //1.导入子组件
 import search from './views/search.vue';

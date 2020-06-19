@@ -9,7 +9,7 @@
 			</view>
 			<browseEnshrine :item="item"></browseEnshrine>
 			<view class="container-describe">
-				<text class="text-describe oneline">{{item.PRODUCT_INFO}}</text>
+				<text class="text-describe horizontal-line">{{item.PRODUCT_INFO}}</text>
 			</view>
 			<logoName :item="item"></logoName>
 		</view>
@@ -97,7 +97,7 @@
 	.text-describe{
 		font-size:30rpx;
 		line-height:32rpx;
-		height:96rpx;/* 32x3=96 */
+		height:94rpx;
 		-webkit-line-clamp:3;
 	}
 </style>
