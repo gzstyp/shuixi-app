@@ -49,6 +49,14 @@ font-size(字体大小) x -webkit-line-clamp(行数) = height(高度) √
 
 　　头部导航栏：下一个块元素需要用margin-top进行上下分开，否则导航栏会将其覆盖
 
+/* 转发的文字 */
+.bottom-transpond-text{
+	font-size:34rpx;
+	height:80rpx;
+	margin-top: -4rpx;
+	line-height: 80rpx;
+}
+
 5、
 display: flex;/* 并排排列,让每一个view都是并排排列 */
 flex-wrap: wrap;/* 表示内容在一行排不下时，就换行,即就往下一行排列 */
@@ -401,3 +409,31 @@ uni.showToast({
 	title: `点击第${index+1}个宫格`,
 	icon: 'none'
 });
+methods: {
+	getHeight : function(){
+		var _this = this;
+		var diffHeight = 0;
+		let view = uni.createSelectorQuery().select(".content");
+		view.boundingClientRect(data => {
+			console.info(data);
+			diffHeight = data.top;
+		}).exec();	
+	},
+	bottomView : function(){
+		var _this = this;
+		let view = uni.createSelectorQuery().select(".bottom-view");
+		view.boundingClientRect(data => {
+			console.info(data);
+		}).exec();	
+	}
+},
+onLoad() {
+	uni.getSystemInfo({
+		success: function (res){
+			var windowHeight = res.windowHeight;
+			var windowWidth = res.windowWidth;
+			console.info(windowWidth)
+		}
+	});
+	this.bottomView();
+}
