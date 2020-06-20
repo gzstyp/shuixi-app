@@ -50,23 +50,23 @@
 					<view class="text">分享小程序</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="userInfo.shops">
+				<view class="li" v-if="userInfo.shops" @click="regsiter()">
 					<view class="icon"><image src="/static/icon/icon_regsiter.svg"></image></view>
 					<view class="text">商家入驻</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="userInfo.shops">
+				<view class="li" v-if="userInfo.shops" @click="menuUpload()">
 					<view class="icon"><image src="/static/icon/icon_cate_upload.svg"></image></view>
 					<view class="text">菜谱上传</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="userInfo.shops">
+				<view class="li" v-if="userInfo.shops" @click="selfControlMenu()">
 					<view class="icon"><image src="/static/icon/icon_self_control_menu.svg"></image></view>
 					<view class="text">自制菜品</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="userInfo.shops">
-					<view class="icon"><image src="/static/icon/icon_self_control_menu.svg"></image></view>
+				<view class="li" v-if="userInfo.shops" @click="taoCanManager()">
+					<view class="icon"><image src="/static/icon/icon_youxuan.svg"></image></view>
 					<view class="text">套餐管理</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
@@ -111,6 +111,11 @@
 			this.userInfo.shops = this.storedb.state.shops;
 		},
 		methods: {
+			navTo : function(url){
+				uni.navigateTo({
+					url : url
+				});
+			},
 			goLogin(){
 				var _login = this.storedb.state.login;
 				if(!_login){
@@ -120,19 +125,29 @@
 				}
 			},
 			editInfo : function(){
-				uni.navigateTo({
-					url : '/pages/my/editInfo?type=1'
-				});
+				this.navTo('/pages/my/editInfo?type=1');
 			},
 			login : function(){
-				uni.navigateTo({
-				    url : '/pages/my/login?type=1'
-				});
+				this.navTo('/pages/my/login?type=1');
 			},
 			help : function(){
-				uni.navigateTo({
-				    url : '/pages/my/help'
-				});
+				this.navTo('/pages/my/help');
+			},
+			/* 商家入住 */
+			regsiter : function(){
+				this.navTo('/pages/my/regsiter');
+			},
+			/* 菜谱上传 */
+			menuUpload : function(){
+				this.navTo('/pages/my/menuUpload');
+			},
+			/* 自制菜品 */
+			selfControlMenu : function(){
+				this.navTo('/pages/my/makeMenu');
+			},
+			/* 套餐管理 */
+			taoCanManager : function(){
+				this.navTo('/pages/my/taoCan');
 			}
 		}
 	}

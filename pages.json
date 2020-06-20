@@ -37,6 +37,30 @@
 			}
 		},
 		{
+			"path": "pages/my/regsiter",
+			"style": {
+				"navigationBarTitleText": "商家入住"
+			}
+		},
+		{
+			"path": "pages/my/menuUpload",
+			"style": {
+				"navigationBarTitleText": "菜谱上传"
+			}
+		},
+		{
+			"path": "pages/my/makeMenu",
+			"style": {
+				"navigationBarTitleText": "自制菜品"
+			}
+		},
+		{
+			"path": "pages/my/taoCan",
+			"style": {
+				"navigationBarTitleText": "套餐管理"
+			}
+		},
+		{
 			"path": "pages/search/index",
 			"style": {
 				"navigationBarTitleText": "菜品|搜索"

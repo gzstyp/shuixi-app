@@ -8,7 +8,7 @@ const storedb = new Vuex.Store({
         avatarUrl : '/static/icon/icon_user_photo_default.svg',
         userName : 'yinlz',
 		nickName : "未登录",
-		shops : false/* 是否是商家 */
+		shops : true /* 是否是商家 */
     },
     mutations : {
         login(state,provider){

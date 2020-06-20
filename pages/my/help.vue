@@ -1,6 +1,6 @@
 <!-- 帮助中心 -->
 <template>
-	<view class="view-root">
+	<view class="help-root">
 		<empty v-if='listData.length === 0'></empty>
 	</view>
 </template>
@@ -22,7 +22,7 @@
 </script>
 
 <style scoped>
-	.view-root{
+	.help-root{
 		margin: 0 2rpx;
 		padding: 0;
 	}
