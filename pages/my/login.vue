@@ -29,11 +29,16 @@
 				<view class="weChat-button" hover-class="weChat-button-hover">微信登录</view>
 			</view>
 		</view>
+		<min-modal ref="modal"></min-modal>
 	</view>
 </template>
 
 <script>
+	import minModal from '../../components/min-modal/min-modal.vue';
 	export default{
+		components: {
+			minModal
+		},
 		props : {},
 		data() {
 			return {
@@ -43,16 +48,23 @@
 				}
 			}
 		},
-		methods:{
+		methods : {
+			dialog : function(msg){
+				this.$refs.modal.handleShow({
+					title: '系统提示',
+					content: msg,
+					showCancel : false
+				});
+			},
 			loginDefault : function(){
 				var _username = this.formLogin.username;
 				var _password = this.formLogin.password;
 				if(_username == null || _username.length <= 0){
-					console.info('请输入登录账号');
+					this.dialog('请输入登录账号');
 					return;
 				}
 				if(_password == null || _password.length <= 0){
-					console.info('请输入登录密码');
+					this.dialog('请输入登录密码');
 					return;
 				}
 				//this.storedb.state.avatarUrl;

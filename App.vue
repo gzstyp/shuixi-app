@@ -36,10 +36,10 @@
    }
    /* 仅显示1行多余的省略号替换*/
    .horizontal-line{
-   	display: -webkit-box;
-   	-webkit-box-orient:vertical;
-   	-webkit-line-clamp:1;
-   	text-overflow: ellipsis;
-   	overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+		-webkit-line-clamp:1;
+		text-overflow: ellipsis;
+		overflow: hidden;
    }
 </style>
