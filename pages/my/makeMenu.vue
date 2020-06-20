@@ -1,6 +1,8 @@
-<!-- 自制菜品 -->
 <template>
-	<view class="make-menu-root"></view>
+	<view class="make-menu-root">
+		<view>烹饪方式</view>
+		<view>黄豆样式</view>
+	</view>
 </template>
 
 <script>
