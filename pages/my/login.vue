@@ -100,6 +100,7 @@
 		margin-top: 6rpx;
 	}
 	.image-container{
+		margin-top: 20rpx;
 		text-align: center;
 	}
 	.login-image{
