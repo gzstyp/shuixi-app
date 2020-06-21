@@ -437,3 +437,13 @@ onLoad() {
 	});
 	this.bottomView();
 }
+
+changeSrc : function(){
+	indexSrc++;
+	var result = indexSrc % 2;
+	if(result == 0){
+		this.src = '/static/icon/icon_check_normal.svg';
+	}else{
+		this.src = '/static/icon/icon_check_selected.svg';
+	}
+},

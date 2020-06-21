@@ -1,8 +1,8 @@
 <template>
 	<view class="item-cook-root">
-		<image class="item-cook-image" :src="item.IMAGE" @click="selected(item.KID)"></image>
-		<image class="item-icon-selected" src="/static/icon/icon_check_selected.svg" v-if="isShow"></image>
-		<text>{{item.NAME}}</text>
+		<image class="item-cook-image" :src="item.IMAGE" @click="selected(item.KID)" mode="aspectFill"></image>
+		<image class="item-icon-selected" src="/static/icon/icon_selected_yellow.svg" v-if="isShow"></image>
+		<view class="item-icon-name horizontal-line">{{item.NAME}}</view>
 	</view>
 </template>
 
@@ -22,10 +22,8 @@
 				this.indexSrc++;
 				var result = this.indexSrc % 2;
 				if(result == 0){
-					this.item.SELECTED = true;
 					this.isShow = true;
 				}else{
-					this.item.SELECTED = false;
 					this.isShow = false;
 				}
 			}
@@ -36,6 +34,9 @@
 <style scoped>
 	.item-cook-root{
 		padding: 0;
+		width: 150rpx;
+		height: 186rpx;/* 150 + 34 = 186 */
+		position: relative;
 	}
 	.item-cook-image{
 		width: 150rpx;
@@ -44,9 +45,15 @@
 	.item-icon-selected{
 		width: 50rpx;
 		height: 50rpx;
+		position: absolute;
+		top: -2rpx;
+		right: 0rpx;
 	}
-	.item-cook-root text{
+	.item-icon-name{
 		font-size: 30rpx;
 		color: #000000;
+		width: 150rpx;
+		height: 34rpx;
+		line-height: 34rpx;
 	}
 </style>

@@ -2,7 +2,7 @@
 	<view class="make-menu-root">
 		<view class="view-tips">
 			<text>
-				请选择你的菜品的烹饪方式
+				选择菜品的烹饪方式
 			</text>
 		</view>
 		<view style="width:100%;">
@@ -18,18 +18,17 @@
 		</view>
 		<view class="view-tips">
 			<text>
-				请选择黄豆样式
+				选择黄豆样式
 			</text>
 		</view>
-		<view>
-			<image :src="src" style="width: 50rpx;height: 50rpx;" @click="changeSrc()"></image>
-		</view>
-		<view>
-			<block v-for="(item,index) in listStyles" :key="index">
-				<itemCook :item="item"></itemCook>
+		<view class="item-cook-root">
+			<block v-for="(item,index) in listData" :key="index">
+				<view class="view-detail-container">
+					<itemCook :item="item"></itemCook>
+				</view>
 			</block>
 		</view>
-		<view class="view-bottom-next" hover-class="view-bottom-next-hover">
+		<view class="view-bottom-next" hover-class="view-bottom-next-hover" @click="nextStep()">
 			<text>下一步</text>
 		</view>
 	</view>
@@ -49,7 +48,6 @@
 			return {
 				listBoxStyle: `height: 38px; font-size: 16px;`,
 				selectKey : null,
-				src : '/static/icon/icon_check_normal.svg',
 				listCooks : [
 					{
 						"KID" : "100101",
@@ -68,108 +66,91 @@
 						"value" : "烙（烤）"
 					}
 				],
-				listStyles : [
+				listData : [
 					{
 						"KID":"10011",
 						"NAME":"毛豆",
-						"IMAGE":"/static/my/maodou.png",
-						"SELECTED":false
+						"IMAGE":"/static/my/maodou.png"
 					},
 					{
 						"KID":"10012",
 						"NAME":"干黄豆",
-						"IMAGE":"/static/my/ganhuangdou.png",
-						"SELECTED":false
+						"IMAGE":"/static/my/ganhuangdou.png"
 					},
 					{
 						"KID":"10013",
 						"NAME":"水泡黄豆",
-						"IMAGE":"/static/my/shuipaohuangdou.png",
-						"SELECTED":false
+						"IMAGE":"/static/my/shuipaohuangdou.png"
 					},
 					{
 						"KID":"10014",
 						"NAME":"豆面",
-						"IMAGE":"/static/my/maodou.png",
-						"SELECTED":false
+						"IMAGE":"/static/my/doumian.png"
 					},
 					{
 						"KID":"10015",
 						"NAME":"豆浆",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10016",
 						"NAME":"豆腐脑",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10017",
 						"NAME":"水豆腐",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10018",
 						"NAME":"白豆腐",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10019",
 						"NAME":"黄豆腐干",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10020",
 						"NAME":"豆腐颗",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10021",
 						"NAME":"豆豉",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10022",
 						"NAME":"豆腐乳",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10023",
 						"NAME":"豆腐丝",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10024",
 						"NAME":"豆腐皮",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10025",
 						"NAME":"豆芽",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10026",
 						"NAME":"豆渣",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					},
 					{
 						"KID":"10027",
 						"NAME":"豆棒",
-						"IMAGE":"/static/icon/image_placeholder.svg",
-						"SELECTED":false
+						"IMAGE":"/static/icon/icon_image.svg"
 					}
 				]
 			}
@@ -179,14 +160,11 @@
 				this.selectKey = orignItem.KID;
 				console.info(this.selectKey);
 			},
-			changeSrc : function(){
-				indexSrc++;
-				var result = indexSrc % 2;
-				if(result == 0){
-					this.src = '/static/icon/icon_check_normal.svg';
-				}else{
-					this.src = '/static/icon/icon_check_selected.svg';
-				}
+			nextStep : function(){
+				var arr = this.listStyles;//不好使
+				for (i = 0; i< arr.length; i++) { 
+				    console.info(arr[i]);
+				 }
 			}
 		}
 	}
@@ -201,19 +179,36 @@
 		margin-left: 10rpx;
 		margin-top: 20rpx;
 		margin-bottom: 20rpx;
-		font-size: 35x;
+		font-size: 35rpx;
 	}
+	
+	.item-cook-root{
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		width:100%;
+		-webkit-flex-wrap:wrap;
+		overflow: hidden;
+	}
+	.view-detail-container{
+		width:22%;
+		flex-direction: column;
+		display: flex;
+		box-sizing: border-box;
+		margin-bottom:10rpx;
+		margin-left: 20rpx;
+		height: 200rpx;
+	}
+	
 	.view-bottom-next{
 		font-size:34rpx;
 		height:80rpx;
 		line-height: 80rpx;
 		width: 100%;
 		background:#F19149;
-		position: fixed;
 		justify-content: center;
 		text-align: center;
-		left: 0px;
-		bottom: 0px;
 	}
 	.view-bottom-next-hover{
 		color: #ffffff;
