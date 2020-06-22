@@ -24,7 +24,7 @@
 		<view class="item-cook-root">
 			<block v-for="(item,index) in listData" :key="index">
 				<view class="view-detail-container">
-					<itemCook :item="item"></itemCook>
+					<itemCook :item="item" :index="index"></itemCook>
 				</view>
 			</block>
 		</view>
@@ -46,7 +46,7 @@
 		props : {},
 		data() {
 			return {
-				listBoxStyle: `height: 38px; font-size: 16px;`,
+				listBoxStyle: `height: 38px; font-size: 16px;padding-left:10rpx;`,
 				selectKey : null,
 				listCooks : [
 					{
@@ -174,6 +174,7 @@
 	.make-menu-root{
 		margin: 0 2rpx;
 		padding: 0;
+		
 	}
 	.view-tips{
 		margin-left: 10rpx;
