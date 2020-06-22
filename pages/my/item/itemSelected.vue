@@ -98,7 +98,7 @@
 					}else{
 						this.storedb.state.selfCook.listHaixian.splice(_of,1);
 					}
-				}else if(_from === 7){//配料选择
+				}else if(_from === 7){//选择配料
 					var _of = this.storedb.state.selfCook.listPeiliao.indexOf(kid);
 					if(bl){
 						if(_of == -1){

@@ -18,7 +18,7 @@ const storedb = new Vuex.Store({
 			listBuwei : [],/* 肉类部位,from=4 */
 			listQinlei : [],/* 选择禽类,from=5 */
 			listHaixian : [],/* 选择海鲜,from=6 */
-			listPeiliao : [],/* 配料选择,from=7 */
+			listPeiliao : [],/* 选择配料,from=7 */
 		}
     },
     mutations : {

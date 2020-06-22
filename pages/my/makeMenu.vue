@@ -193,7 +193,7 @@
 				listBuwei : [],/* 肉类部位,from=4 */
 				listQinlei : [],/* 选择禽类,from=5 */
 				listHaixian : [],/* 选择海鲜,from=6 */
-				listPeiliao : [],/* 配料选择,from=7 */
+				listPeiliao : [],/* 选择配料,from=7 */
 			}
 		}
 	}
@@ -201,7 +201,7 @@
 
 <style scoped>
 	.make-menu-container{
-		
+
 	}
 	.make-menu-root{
 		margin: 0 13rpx;

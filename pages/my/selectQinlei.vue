@@ -76,7 +76,7 @@
 			/* 重置 */
 			this.storedb.state.selfCook.listQinlei = [];/* 选择禽类,from=5 */
 			this.storedb.state.selfCook.listHaixian = [];/* 选择海鲜,from=6 */
-			this.storedb.state.selfCook.listPeiliao = [];/* 配料选择,from=7 */
+			this.storedb.state.selfCook.listPeiliao = [];/* 选择配料,from=7 */
 		}
 	}
 </script>

@@ -81,7 +81,7 @@
 		{
 			"path": "pages/my/selectPeiliao",
 			"style": {
-				"navigationBarTitleText": "配料选择"
+				"navigationBarTitleText": "选择配料"
 			}
 		},
 		{

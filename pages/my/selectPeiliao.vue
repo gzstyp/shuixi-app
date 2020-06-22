@@ -61,7 +61,7 @@
 					showCancel : false
 				});
 			},
-			submit : function(){				
+			submit : function(){
 				console.info('选择菜品的烹饪方式:'+this.storedb.state.selfCook.cookType);
 				console.info('选择黄豆样式:'+this.storedb.state.selfCook.listStyle);
 				console.info('选择蔬菜:'+this.storedb.state.selfCook.listShucai);
@@ -69,12 +69,12 @@
 				console.info('肉类部位:'+this.storedb.state.selfCook.listBuwei);
 				console.info('选择禽类:'+this.storedb.state.selfCook.listQinlei);
 				console.info('选择海鲜:'+this.storedb.state.selfCook.listHaixian);
-				console.info('配料选择:'+this.storedb.state.selfCook.listPeiliao);
+				console.info('选择配料:'+this.storedb.state.selfCook.listPeiliao);
 			}
 		},
 		onLoad(){
 			/* 重置 */
-			this.storedb.state.selfCook.listPeiliao = [];/* 配料选择,from=7 */
+			this.storedb.state.selfCook.listPeiliao = [];/* 选择配料,from=7 */
 		}
 	}
 </script>
