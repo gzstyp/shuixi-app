@@ -67,15 +67,17 @@
 					this.dialog('请输入登录密码');
 					return;
 				}
-				//this.storedb.state.avatarUrl;
-				this.storedb.state.nickName = _username;
+				//this.storedb.state.userInfo.avatarUrl;
+				this.storedb.state.userInfo.nickName = _username;
 				if(_username == 'sj'){
-					this.storedb.state.shops = true;
+					this.storedb.state.userInfo.shops = true;
 				}else{
-					this.storedb.state.shops = false;
+					this.storedb.state.userInfo.shops = false;
 				}
-				var pages = getCurrentPages();
-				uni.navigateBack();
+				this.storedb.state.userInfo.login = true;
+				uni.reLaunch({
+				    url: '/pages/my/my'
+				});
 			},
 			loginWeChat : function(){
 				

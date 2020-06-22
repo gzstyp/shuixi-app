@@ -3,12 +3,14 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 const storedb = new Vuex.Store({
     state : {
-        login : false,
-        token : '',
-        avatarUrl : '/static/icon/icon_user_photo_default.svg',
-        userName : 'yinlz',
-		nickName : "未登录",
-		shops : true ,/* 是否是商家 */
+		userInfo : {
+			login : false,
+			token : '',
+			avatarUrl : '/static/icon/icon_user_photo_default.svg',
+			userName : 'yinlz',
+			nickName : "未登录",
+			shops : true ,/* 是否是商家 */
+		},
 		/* 自制菜品 */
 		selfCook : {
 			cookType : null,/* 选择菜品的烹饪方式 */
@@ -23,16 +25,16 @@ const storedb = new Vuex.Store({
     },
     mutations : {
         login(state,provider){
-            state.login = true;
-            state.token = provider.token;
-            state.userName = provider.userName;
-            state.avatarUrl = provider.avatarUrl;
+            state.userInfo.login = true;
+            state.userInfo.token = provider.token;
+            state.userInfo.userName = provider.userName;
+            state.userInfo.avatarUrl = provider.avatarUrl;
         },
         logout(state){
-            state.login = false;
-            state.token = '';
-            state.userName = '';
-            state.avatarUrl = '';
+            state.userInfo.login = false;
+            state.userInfo.token = '';
+            state.userInfo.userName = '';
+            state.userInfo.avatarUrl = '';
         }
     },
     actions: {}

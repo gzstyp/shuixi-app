@@ -11,8 +11,13 @@
 			</view>
 			<min-modal ref="modal"></min-modal>
 		</view>
-		<view class="view-bottom-next" hover-class="view-bottom-next-hover" @click="submit()">
-			<text>提交</text>
+		<view class="bottom-btn-container">
+			<view class="bottom-btn-left" hover-class="view-bottom-hover" @click="previous()">
+				<text>上一步</text>
+			</view>
+			<view class="bottom-btn-right" hover-class="view-bottom-hover" @click="submit()">
+				<text>提交</text>
+			</view>
 		</view>
 	</view>
 </template>
@@ -61,6 +66,10 @@
 					showCancel : false
 				});
 			},
+			previous : function(){
+				this.resetData();
+				uni.navigateBack();
+			},
 			submit : function(){
 				console.info('选择菜品的烹饪方式:'+this.storedb.state.selfCook.cookType);
 				console.info('选择黄豆样式:'+this.storedb.state.selfCook.listStyle);
@@ -70,11 +79,14 @@
 				console.info('选择禽类:'+this.storedb.state.selfCook.listQinlei);
 				console.info('选择海鲜:'+this.storedb.state.selfCook.listHaixian);
 				console.info('选择配料:'+this.storedb.state.selfCook.listPeiliao);
+			},
+			resetData : function(){
+				/* 重置 */
+				this.storedb.state.selfCook.listPeiliao = [];/* 选择配料,from=7 */
 			}
 		},
 		onLoad(){
-			/* 重置 */
-			this.storedb.state.selfCook.listPeiliao = [];/* 选择配料,from=7 */
+			this.resetData();
 		}
 	}
 </script>
@@ -110,17 +122,5 @@
 		margin-top: 20rpx;
 		margin-bottom: 20rpx;
 		font-size: 35rpx;
-	}
-	.view-bottom-next{
-		font-size:34rpx;
-		height:80rpx;
-		line-height: 80rpx;
-		width: 100%;
-		background:#F19149;
-		justify-content: center;
-		text-align: center;
-	}
-	.view-bottom-next-hover{
-		color: #ffffff;
 	}
 </style>

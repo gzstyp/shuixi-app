@@ -4,7 +4,7 @@
 			<view class="bg">
 				<view class="box">
 					<view class="box-hd">
-						<view class="avator" @click="goLogin" :hover-class="!storedb.state.login ? 'logo-hover' : ''">
+						<view class="avator" @click="goLogin" :hover-class="!storedb.state.userInfo.login ? 'logo-hover' : ''">
 							<image :src="userInfo.photo"></image>
 						</view>
 						<view class="nick-name">{{userInfo.nickName}}</view>
@@ -105,10 +105,10 @@
 				}
 			}
 		},
-		onLoad(){
-			this.userInfo.photo = this.storedb.state.avatarUrl;
-			this.userInfo.nickName = this.storedb.state.nickName;
-			this.userInfo.shops = this.storedb.state.shops;
+		onLoad(options){
+			this.userInfo.photo = this.storedb.state.userInfo.avatarUrl;
+			this.userInfo.nickName = this.storedb.state.userInfo.nickName;
+			this.userInfo.shops = this.storedb.state.userInfo.shops;
 		},
 		methods: {
 			navTo : function(url){
@@ -117,7 +117,7 @@
 				});
 			},
 			goLogin(){
-				var _login = this.storedb.state.login;
+				var _login = this.storedb.state.userInfo.login;
 				if(!_login){
 					this.login();
 				}else{

@@ -42,4 +42,32 @@
 		text-overflow: ellipsis;
 		overflow: hidden;
    }
+   /* 自制菜品-容器*/
+   .bottom-btn-container{
+   	display: flex;
+   	justify-content: space-between;
+   	font-size:34rpx;
+   	color: #ffffff;
+   	width: 100%;
+   }
+   /* 自制菜品-左边-上一步*/
+   .bottom-btn-left{
+   	height:80rpx;
+   	line-height: 80rpx;
+   	width: 50%;
+   	background: #333334;
+   	text-align: center;
+   }
+   /* 自制菜品-右边-下一步|提交*/
+   .bottom-btn-right{
+   	height:80rpx;
+   	line-height: 80rpx;
+   	width: 50%;
+   	background:#F19149;
+   	text-align: center;
+   }
+   /* 自制菜品-左边|右边-点击时的样式*/
+   .view-bottom-hover{
+   	color: #FEB82B;
+   }
 </style>

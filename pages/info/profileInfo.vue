@@ -121,7 +121,7 @@
 				/* 重新加载当前页面 */
 				uni.redirectTo({
 					url : '/pages/info/profileInfo?type=1&kid='+kid+'&title='+title+'&image='+image
-				})
+				});
 			}
 		},
 		onLoad(options){
