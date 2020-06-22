@@ -447,3 +447,21 @@ changeSrc : function(){
 		this.src = '/static/icon/icon_check_selected.svg';
 	}
 },
+
+vuex|数组的操作：
+赋值
+this.storedb.state.nickName = _username;
+取值console.info(this.storedb.state.nickName);
+handler : function(kid,bl){
+	var _of = this.storedb.state.listStyle.indexOf(kid);
+	if(bl){
+		if(_of == -1){
+			this.storedb.state.listStyle.push(kid);
+		}else{
+			this.storedb.state.listStyle.splice(_of,1);
+		}
+	}else{
+		this.storedb.state.listStyle.splice(_of,1);
+	}
+	console.info(this.storedb.state.listStyle);
+}

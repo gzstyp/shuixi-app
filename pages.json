@@ -55,6 +55,12 @@
 			}
 		},
 		{
+			"path": "pages/my/selectShucai",
+			"style": {
+				"navigationBarTitleText": "选择蔬菜"
+			}
+		},
+		{
 			"path": "pages/my/taoCan",
 			"style": {
 				"navigationBarTitleText": "套餐管理"

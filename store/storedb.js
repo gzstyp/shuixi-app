@@ -8,7 +8,13 @@ const storedb = new Vuex.Store({
         avatarUrl : '/static/icon/icon_user_photo_default.svg',
         userName : 'yinlz',
 		nickName : "未登录",
-		shops : true /* 是否是商家 */
+		shops : true ,/* 是否是商家 */
+		/* 自制菜品 */
+		selfCook : {
+			cookType : null,/* 选择菜品的烹饪方式 */
+			listStyle : [],/* 选择黄豆样式 */
+			listShucai : [],/* 选择蔬菜 */
+		}
     },
     mutations : {
         login(state,provider){

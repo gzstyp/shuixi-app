@@ -1,32 +1,35 @@
 <template>
-	<view class="make-menu-root">
-		<view class="view-tips">
-			<text>
-				选择菜品的烹饪方式
-			</text>
-		</view>
-		<view style="width:100%;">
-			<xfl-select
-				:list="listCooks"
-				:clearable="false"
-				:showItemNum="listCooks.length"
-				:style_Container="listBoxStyle"
-				:placeholder="'选择烹饪方式'"
-				:selectHideType="'independent'"
-				@change="change"
-			></xfl-select>
-		</view>
-		<view class="view-tips">
-			<text>
-				选择黄豆样式
-			</text>
-		</view>
-		<view class="item-cook-root">
-			<block v-for="(item,index) in listData" :key="index">
-				<view class="view-detail-container">
-					<itemCook :item="item" :index="index"></itemCook>
-				</view>
-			</block>
+	<view class="make-menu-container">
+		<view class="make-menu-root">
+			<view class="view-tips">
+				<text>
+					选择菜品的烹饪方式
+				</text>
+			</view>
+			<view style="width:100%;">
+				<xfl-select
+					:list="listCooks"
+					:clearable="false"
+					:showItemNum="listCooks.length"
+					:style_Container="listBoxStyle"
+					:placeholder="'选择烹饪方式'"
+					:selectHideType="'independent'"
+					@change="change"
+				></xfl-select>
+			</view>
+			<view class="view-tips">
+				<text>
+					选择黄豆样式
+				</text>
+			</view>
+			<view class="item-cook-root">
+				<block v-for="(item,index) in listData" :key="index">
+					<view class="view-detail-container">
+						<itemSelected :item="item" :from="1"></itemSelected>
+					</view>
+				</block>
+			</view>
+			<min-modal ref="modal"></min-modal>
 		</view>
 		<view class="view-bottom-next" hover-class="view-bottom-next-hover" @click="nextStep()">
 			<text>下一步</text>
@@ -36,12 +39,14 @@
 
 <script>
 	import xflSelect from '../../components/xfl-select.vue';
-	import itemCook from './item/itemCook.vue';
+	import itemSelected from './item/itemSelected.vue';
+	import minModal from '../../components/min-modal/min-modal.vue';
 	var indexSrc = 0;
 	export default{
 		components: {
 			xflSelect,
-			itemCook
+			itemSelected,
+			minModal
 		},
 		props : {},
 		data() {
@@ -155,26 +160,50 @@
 				]
 			}
 		},
-		methods:{
+		methods : {
+			dialog : function(msg){
+				this.$refs.modal.handleShow({
+					title: '系统提示',
+					content: msg,
+					showCancel : false
+				});
+			},
 			change({ newVal, oldVal, index, orignItem }) {
 				this.selectKey = orignItem.KID;
-				console.info(this.selectKey);
+				this.storedb.state.selfCook.cookType = orignItem.KID;
 			},
 			nextStep : function(){
-				var arr = this.listStyles;//不好使
-				for (i = 0; i< arr.length; i++) { 
-				    console.info(arr[i]);
-				 }
+				if(this.selectKey == null || this.selectKey.length <= 0){
+					this.dialog('请选择烹饪方式');
+					return;
+				}
+				var _style = this.storedb.state.selfCook.listStyle;
+				if(_style == null || _style.length <= 0){
+					this.dialog('请选择黄豆样式');
+					return;
+				}
+				uni.navigateTo({
+					url : '/pages/my/selectShucai',
+				});
+			}
+		},
+		onLoad(){
+			this.storedb.state.selfCook = {
+				cookType : null,/* 选择菜品的烹饪方式 */
+				listStyle : [],/* 选择黄豆样式 */
+				listShucai : [],/* 选择蔬菜 */
 			}
 		}
 	}
 </script>
 
 <style scoped>
-	.make-menu-root{
-		margin: 0 2rpx;
-		padding: 0;
+	.make-menu-container{
 		
+	}
+	.make-menu-root{
+		margin: 0 13rpx;
+		padding: 0;
 	}
 	.view-tips{
 		margin-left: 10rpx;
@@ -182,7 +211,6 @@
 		margin-bottom: 20rpx;
 		font-size: 35rpx;
 	}
-	
 	.item-cook-root{
 		padding: 0;
 		display: flex;
@@ -201,7 +229,6 @@
 		margin-left: 20rpx;
 		height: 200rpx;
 	}
-	
 	.view-bottom-next{
 		font-size:34rpx;
 		height:80rpx;
