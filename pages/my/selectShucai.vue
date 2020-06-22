@@ -1,4 +1,4 @@
-<!-- 选择蔬菜 -->
+<!-- 选择蔬菜;from=2 -->
 <template>
 	<view class="make-menu-root">
 		<view class="make-menu-container">
@@ -147,15 +147,19 @@
 				});
 			},
 			nextStep : function(){
-				var lists = this.storedb.state.selfCook.listShucai;
-				if(lists == null || lists.length <= 0){
-					this.dialog('请选择蔬菜');
-					return;
-				}
 				uni.navigateTo({
 					url : '/pages/my/selectRoulei',
 				});
 			}
+		},
+		onLoad(){
+			/* 重置 */
+			this.storedb.state.selfCook.listShucai = [];/* 选择蔬菜,from=2 */
+			this.storedb.state.selfCook.listRoulei = [];/* 选择(畜类)肉类,from=3 */
+			this.storedb.state.selfCook.listBuwei = [];/* 肉类部位,from=4 */
+			this.storedb.state.selfCook.listQinlei = [];/* 选择禽类,from=5 */
+			this.storedb.state.selfCook.listHaixian = [];/* 选择海鲜,from=6 */
+			this.storedb.state.selfCook.listPeiliao = [];/* 配料选择,from=7 */
 		}
 	}
 </script>

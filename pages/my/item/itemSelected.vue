@@ -65,6 +65,50 @@
 					}else{
 						this.storedb.state.selfCook.listRoulei.splice(_of,1);
 					}
+				}else if(_from === 4){//选择部位
+					var _of = this.storedb.state.selfCook.listBuwei.indexOf(kid);
+					if(bl){
+						if(_of == -1){
+							this.storedb.state.selfCook.listBuwei.push(kid);
+						}else{
+							this.storedb.state.selfCook.listBuwei.splice(_of,1);
+						}
+					}else{
+						this.storedb.state.selfCook.listBuwei.splice(_of,1);
+					}
+				}else if(_from === 5){//选择禽类
+					var _of = this.storedb.state.selfCook.listQinlei.indexOf(kid);
+					if(bl){
+						if(_of == -1){
+							this.storedb.state.selfCook.listQinlei.push(kid);
+						}else{
+							this.storedb.state.selfCook.listQinlei.splice(_of,1);
+						}
+					}else{
+						this.storedb.state.selfCook.listQinlei.splice(_of,1);
+					}
+				}else if(_from === 6){//选择海鲜
+					var _of = this.storedb.state.selfCook.listHaixian.indexOf(kid);
+					if(bl){
+						if(_of == -1){
+							this.storedb.state.selfCook.listHaixian.push(kid);
+						}else{
+							this.storedb.state.selfCook.listHaixian.splice(_of,1);
+						}
+					}else{
+						this.storedb.state.selfCook.listHaixian.splice(_of,1);
+					}
+				}else if(_from === 7){//配料选择
+					var _of = this.storedb.state.selfCook.listPeiliao.indexOf(kid);
+					if(bl){
+						if(_of == -1){
+							this.storedb.state.selfCook.listPeiliao.push(kid);
+						}else{
+							this.storedb.state.selfCook.listPeiliao.splice(_of,1);
+						}
+					}else{
+						this.storedb.state.selfCook.listPeiliao.splice(_of,1);
+					}
 				}
 			}
 		}

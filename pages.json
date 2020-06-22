@@ -63,7 +63,25 @@
 		{
 			"path": "pages/my/selectRoulei",
 			"style": {
-				"navigationBarTitleText": "选择肉类"
+				"navigationBarTitleText": "选择畜类"
+			}
+		},
+		{
+			"path": "pages/my/selectQinlei",
+			"style": {
+				"navigationBarTitleText": "选择禽类"
+			}
+		},
+		{
+			"path": "pages/my/selectHaixian",
+			"style": {
+				"navigationBarTitleText": "选择海鲜"
+			}
+		},
+		{
+			"path": "pages/my/selectPeiliao",
+			"style": {
+				"navigationBarTitleText": "配料选择"
 			}
 		},
 		{
