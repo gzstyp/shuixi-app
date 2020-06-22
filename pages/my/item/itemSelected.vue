@@ -54,6 +54,17 @@
 					}else{
 						this.storedb.state.selfCook.listShucai.splice(_of,1);
 					}
+				}else if(_from === 3){//选择肉类
+					var _of = this.storedb.state.selfCook.listRoulei.indexOf(kid);
+					if(bl){
+						if(_of == -1){
+							this.storedb.state.selfCook.listRoulei.push(kid);
+						}else{
+							this.storedb.state.selfCook.listRoulei.splice(_of,1);
+						}
+					}else{
+						this.storedb.state.selfCook.listRoulei.splice(_of,1);
+					}
 				}
 			}
 		}

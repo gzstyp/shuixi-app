@@ -177,8 +177,8 @@
 					this.dialog('请选择烹饪方式');
 					return;
 				}
-				var _style = this.storedb.state.selfCook.listStyle;
-				if(_style == null || _style.length <= 0){
+				var lists = this.storedb.state.selfCook.listStyle;
+				if(lists == null || lists.length <= 0){
 					this.dialog('请选择黄豆样式');
 					return;
 				}
@@ -188,10 +188,12 @@
 			}
 		},
 		onLoad(){
+			/* 重置 */
 			this.storedb.state.selfCook = {
 				cookType : null,/* 选择菜品的烹饪方式 */
-				listStyle : [],/* 选择黄豆样式 */
-				listShucai : [],/* 选择蔬菜 */
+				listStyle : [],/* 选择黄豆样式,from=1 */
+				listShucai : [],/* 选择蔬菜,from=2 */
+				listRoulei : [],/* 选择肉类,from=3 */
 			}
 		}
 	}

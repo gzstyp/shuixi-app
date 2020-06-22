@@ -1,3 +1,4 @@
+<!-- 选择蔬菜 -->
 <template>
 	<view class="make-menu-root">
 		<view class="make-menu-container">
@@ -146,13 +147,14 @@
 				});
 			},
 			nextStep : function(){
-				var _shucai = this.storedb.state.selfCook.listShucai;
-				if(_shucai == null || _shucai.length <= 0){
+				var lists = this.storedb.state.selfCook.listShucai;
+				if(lists == null || lists.length <= 0){
 					this.dialog('请选择蔬菜');
 					return;
 				}
-				console.info(this.storedb.state.selfCook.listStyle);
-				console.info(_shucai);
+				uni.navigateTo({
+					url : '/pages/my/selectRoulei',
+				});
 			}
 		}
 	}

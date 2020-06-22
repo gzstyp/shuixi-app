@@ -61,6 +61,12 @@
 			}
 		},
 		{
+			"path": "pages/my/selectRoulei",
+			"style": {
+				"navigationBarTitleText": "选择肉类"
+			}
+		},
+		{
 			"path": "pages/my/taoCan",
 			"style": {
 				"navigationBarTitleText": "套餐管理"

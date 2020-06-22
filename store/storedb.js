@@ -12,8 +12,9 @@ const storedb = new Vuex.Store({
 		/* 自制菜品 */
 		selfCook : {
 			cookType : null,/* 选择菜品的烹饪方式 */
-			listStyle : [],/* 选择黄豆样式 */
-			listShucai : [],/* 选择蔬菜 */
+			listStyle : [],/* 选择黄豆样式,from=1 */
+			listShucai : [],/* 选择蔬菜,from=2 */
+			listRoulei : [],/* 选择肉类,from=3 */
 		}
     },
     mutations : {
