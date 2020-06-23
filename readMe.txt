@@ -41,7 +41,7 @@ font-size(字体大小) x -webkit-line-clamp(行数) = height(高度) √
 
 　　text-align: center; 子元素是文本（非块元素）
 
-　　margin: 0px auto; 子元素为块元素（div，view）
+　　margin: 0px auto; 子元素为块元素（div，view）,好使
 
 4、头部导航栏、底部导航栏
 
