@@ -66,10 +66,12 @@
 					showCancel : false
 				});
 			},
+			/* 上一步 */
 			previous : function(){
 				this.resetData();
 				uni.navigateBack();
 			},
+			/* 提交 */
 			submit : function(){
 				console.info('选择菜品的烹饪方式:'+this.storedb.state.selfCook.cookType);
 				console.info('选择黄豆样式:'+this.storedb.state.selfCook.listStyle);
@@ -80,8 +82,8 @@
 				console.info('选择海鲜:'+this.storedb.state.selfCook.listHaixian);
 				console.info('选择配料:'+this.storedb.state.selfCook.listPeiliao);
 			},
+			/* 重置 */
 			resetData : function(){
-				/* 重置 */
 				this.storedb.state.selfCook.listPeiliao = [];/* 选择配料,from=7 */
 			}
 		},
@@ -94,6 +96,7 @@
 <style scoped>
 	.make-menu-root{
 		padding-top: 20rpx;
+		margin-bottom: 80rpx;
 	}
 	.make-menu-container{
 		margin: 0 13rpx;

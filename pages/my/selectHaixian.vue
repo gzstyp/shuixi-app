@@ -66,17 +66,19 @@
 					showCancel : false
 				});
 			},
+			/* 上一步 */
 			previous : function(){
 				this.resetData();
 				uni.navigateBack();
 			},
+			/* 下一步 */
 			nextStep : function(){
 				uni.navigateTo({
 					url : '/pages/my/selectPeiliao',
 				});
 			},
+			/* 重置 */
 			resetData : function(){
-				/* 重置 */
 				this.storedb.state.selfCook.listHaixian = [];/* 选择海鲜,from=6 */
 				this.storedb.state.selfCook.listPeiliao = [];/* 选择配料,from=7 */
 			}
@@ -90,6 +92,7 @@
 <style scoped>
 	.make-menu-root{
 		padding-top: 20rpx;
+		margin-bottom: 80rpx;
 	}
 	.make-menu-container{
 		margin: 0 13rpx;

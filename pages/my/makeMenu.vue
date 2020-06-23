@@ -32,8 +32,13 @@
 			</view>
 			<min-modal ref="modal"></min-modal>
 		</view>
-		<view class="view-bottom-next" hover-class="view-bottom-next-hover" @click="nextStep()">
-			<text>下一步</text>
+		<view class="bottom-btn-container">
+			<view class="bottom-btn-left" hover-class="view-bottom-hover" @click="previous()">
+				<text>返回</text>
+			</view>
+			<view class="bottom-btn-right" hover-class="view-bottom-hover" @click="nextStep()">
+				<text>下一步</text>
+			</view>
 		</view>
 	</view>
 </template>
@@ -173,6 +178,12 @@
 				this.selectKey = orignItem.KID;
 				this.storedb.state.selfCook.cookType = orignItem.KID;
 			},
+			/* 返回 */
+			previous : function(){
+				this.resetData();
+				uni.navigateBack();
+			},
+			/* 下一步 */
 			nextStep : function(){
 				if(this.selectKey == null || this.selectKey.length <= 0){
 					this.dialog('请选择烹饪方式');
@@ -181,27 +192,30 @@
 				uni.navigateTo({
 					url : '/pages/my/selectShucai',
 				});
+			},
+			/* 重置 */
+			resetData : function(){
+				this.storedb.state.selfCook = {
+					cookType : null,/* 选择菜品的烹饪方式 */
+					listStyle : [],/* 选择黄豆样式,from=1 */
+					listShucai : [],/* 选择蔬菜,from=2 */
+					listRoulei : [],/* 选择(畜类)肉类,from=3 */
+					listBuwei : [],/* 肉类部位,from=4 */
+					listQinlei : [],/* 选择禽类,from=5 */
+					listHaixian : [],/* 选择海鲜,from=6 */
+					listPeiliao : [],/* 选择配料,from=7 */
+				}
 			}
 		},
 		onLoad(){
-			/* 重置 */
-			this.storedb.state.selfCook = {
-				cookType : null,/* 选择菜品的烹饪方式 */
-				listStyle : [],/* 选择黄豆样式,from=1 */
-				listShucai : [],/* 选择蔬菜,from=2 */
-				listRoulei : [],/* 选择(畜类)肉类,from=3 */
-				listBuwei : [],/* 肉类部位,from=4 */
-				listQinlei : [],/* 选择禽类,from=5 */
-				listHaixian : [],/* 选择海鲜,from=6 */
-				listPeiliao : [],/* 选择配料,from=7 */
-			}
+			this.resetData();
 		}
 	}
 </script>
 
 <style scoped>
 	.make-menu-container{
-
+		margin-bottom: 80rpx;
 	}
 	.make-menu-root{
 		margin: 0 13rpx;
@@ -230,17 +244,5 @@
 		margin-bottom:10rpx;
 		margin-left: 20rpx;
 		height: 200rpx;
-	}
-	.view-bottom-next{
-		font-size:34rpx;
-		height:80rpx;
-		line-height: 80rpx;
-		width: 100%;
-		background:#F19149;
-		justify-content: center;
-		text-align: center;
-	}
-	.view-bottom-next-hover{
-		color: #ffffff;
 	}
 </style>

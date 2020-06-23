@@ -297,6 +297,39 @@ css:
 	justify-content: center;/* 让容器水平居中 */
 }
 
+13、
+/* 底部操作菜单 */
+width: 100%;
+position:fixed;
+bottom:0rpx;
+z-index: 66;
+
+.page-bottom{
+	position:fixed;
+	left: 30rpx;
+	bottom:0rpx;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 690rpx;
+	height: 100rpx;
+	background: rgba(255,255,255,.9);
+	box-shadow: 0 0 20rpx 0 rgba(0,0,0,.5);
+	border-radius: 16rpx; */
+}
+.action-btn-group{
+	display: flex;
+	height: 76rpx;
+	border-radius: 20rpx;
+	overflow: hidden;
+	/* box-shadow: 0 20rpx 40rpx -16rpx #fa436a;
+	box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
+	background: linear-gradient(to right, #ffac30,#fa436a,#F56C6C);
+	margin-left: 20rpx; */
+	position:relative;
+}
+
 //1.导入子组件
 import search from './views/search.vue';
 //2.注册组件

@@ -11,8 +11,13 @@
 			</view>
 			<min-modal ref="modal"></min-modal>
 		</view>
-		<view class="view-bottom-next" hover-class="view-bottom-next-hover" @click="nextStep()">
-			<text>下一步</text>
+		<view class="bottom-btn-container">
+			<view class="bottom-btn-left" hover-class="view-bottom-hover" @click="previous()">
+				<text>上一步</text>
+			</view>
+			<view class="bottom-btn-right" hover-class="view-bottom-hover" @click="nextStep()">
+				<text>下一步</text>
+			</view>
 		</view>
 	</view>
 </template>
@@ -66,17 +71,26 @@
 					showCancel : false
 				});
 			},
+			/* 上一步 */
+			previous : function(){
+				this.resetData();
+				uni.navigateBack();
+			},
+			/* 下一步 */
 			nextStep : function(){
 				uni.navigateTo({
 					url : '/pages/my/selectHaixian',
 				});
+			},
+			/* 重置 */
+			resetData : function(){
+				this.storedb.state.selfCook.listQinlei = [];/* 选择禽类,from=5 */
+				this.storedb.state.selfCook.listHaixian = [];/* 选择海鲜,from=6 */
+				this.storedb.state.selfCook.listPeiliao = [];/* 选择配料,from=7 */
 			}
 		},
 		onLoad(){
-			/* 重置 */
-			this.storedb.state.selfCook.listQinlei = [];/* 选择禽类,from=5 */
-			this.storedb.state.selfCook.listHaixian = [];/* 选择海鲜,from=6 */
-			this.storedb.state.selfCook.listPeiliao = [];/* 选择配料,from=7 */
+			this.resetData();
 		}
 	}
 </script>
@@ -84,6 +98,7 @@
 <style scoped>
 	.make-menu-root{
 		padding-top: 20rpx;
+		margin-bottom: 80rpx;
 	}
 	.make-menu-container{
 		margin: 0 13rpx;
@@ -112,17 +127,5 @@
 		margin-top: 20rpx;
 		margin-bottom: 20rpx;
 		font-size: 35rpx;
-	}
-	.view-bottom-next{
-		font-size:34rpx;
-		height:80rpx;
-		line-height: 80rpx;
-		width: 100%;
-		background:#F19149;
-		justify-content: center;
-		text-align: center;
-	}
-	.view-bottom-next-hover{
-		color: #ffffff;
 	}
 </style>

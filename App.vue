@@ -49,6 +49,10 @@
    	font-size:34rpx;
    	color: #ffffff;
    	width: 100%;
+	position:fixed;
+	bottom:0rpx;
+	z-index: 66;
+	align-items: center;
    }
    /* 自制菜品-左边-上一步*/
    .bottom-btn-left{
