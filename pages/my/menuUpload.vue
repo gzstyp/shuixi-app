@@ -1,25 +1,25 @@
 <!-- 菜谱上传 -->
 <template>
 	<view class="menu-upload-root">
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<text>菜谱名称</text>
 		</view>
-		<view class="menu-upload-cate-name">
+		<view class="label-description-input">
 			<input type="text" maxlength="20" placeholder="输入菜的名称(限制20个字符)"/>
 		</view>
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<text>营养价值介绍</text>
 		</view>
 		<view class="menu-upload-cate-name">
 			<textarea type="text" rows="15" maxlength="256" placeholder="输入菜品的营养价值,菜品特色(限制256个字符)"/>
 		</view>
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<text>添加菜品图片</text>
 		</view>
 		<view class="menu-upload-image">
 			<image src="/static/icon/icon_plus_normal.svg"></image>
 		</view>
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<view class="peiliao-tips-container">
 				<text>选择食材配料、用量、单位</text>
 				<text class="peiliao-tips-btn" @click="rowAdd()">添加食材</text>
@@ -69,7 +69,7 @@
 				</view>
 			</block>
 		</view>
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<text>
 				烹饪方式
 			</text>
@@ -85,7 +85,7 @@
 				@change="changeCooks"
 			></xfl-select>
 		</view>
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<text>
 				辣味程度
 			</text>
@@ -101,7 +101,7 @@
 				@change="changeDegree"
 			></xfl-select>
 		</view>
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<text>烹饪小贴士</text>
 		</view>
 		<view class="menu-upload-cate-name">
@@ -265,12 +265,6 @@
 	.menu-upload-root{
 		margin: 0 10rpx;
 		padding: 0;
-	}
-	.view-tips{
-		margin-left: 10rpx;
-		margin-top: 20rpx;
-		margin-bottom: 20rpx;
-		font-size: 35rpx;
 	}
 	.peiliao-tips-btn{
 		color: #4CA2FF;

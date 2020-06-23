@@ -74,4 +74,29 @@
    .view-bottom-hover{
    	color: #FEB82B;
    }
+   /* 提示文字说明*/
+   .label-tips-description{
+	   margin-left: 10rpx;
+	   margin-top: 20rpx;
+	   margin-bottom: 20rpx;
+	   font-size: 35rpx;
+   }
+   /* 提示文字说明-输入框*/
+   .label-description-input input{
+   	   border: 1px solid rgba(0, 0, 0, 0.1);
+   	   height: 70rpx;
+   	   line-height: 70rpx;
+   	   padding: 0 4rpx;
+   	   border-radius: 10rpx;
+   }
+   /* 提示文字说明-文本域*/
+   .label-description-textarea textarea{
+   	   border: 1px solid rgba(0, 0, 0, 0.1);
+   	   padding: 8rpx;
+   	   width: 97.8%;
+   	   height: 280rpx;
+   	   font-size: 30rpx;
+   	   border-radius: 10rpx;
+   	   margin-right: 10rpx;
+   }
 </style>

@@ -122,10 +122,4 @@
 		margin-left: 20rpx;
 		height: 200rpx;
 	}
-	.view-tips{
-		margin-left: 10rpx;
-		margin-top: 20rpx;
-		margin-bottom: 20rpx;
-		font-size: 35rpx;
-	}
 </style>

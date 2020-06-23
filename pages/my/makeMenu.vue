@@ -2,7 +2,7 @@
 <template>
 	<view class="make-menu-container">
 		<view class="make-menu-root">
-			<view class="view-tips">
+			<view class="label-tips-description">
 				<text>
 					选择菜品的烹饪方式
 				</text>
@@ -18,7 +18,7 @@
 					@change="change"
 				></xfl-select>
 			</view>
-			<view class="view-tips">
+			<view class="label-tips-description">
 				<text>
 					选择黄豆样式
 				</text>
@@ -220,12 +220,6 @@
 	.make-menu-root{
 		margin: 0 13rpx;
 		padding: 0;
-	}
-	.view-tips{
-		margin-left: 10rpx;
-		margin-top: 20rpx;
-		margin-bottom: 20rpx;
-		font-size: 35rpx;
 	}
 	.item-cook-root{
 		padding: 0;

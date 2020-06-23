@@ -2,11 +2,11 @@
 <template>
 	<view class="make-menu-root">
 		<view class="make-menu-container">
-			<view class="view-tips">
+			<view class="label-tips-description">
 				<view class="peiliao-tips-container">
 					<text>选择配料名称、用量、单位</text>
 					<text class="peiliao-tips-btn" @click="rowAdd()">添加配料</text>
-				</view>	
+				</view>
 			</view>
 			<view class="cells">
 				<view class="cell">
@@ -53,19 +53,19 @@
 				</block>
 			</view>
 		</view>
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<text>菜品名称</text>
 		</view>
 		<view class="peiliao-cate-name">
 			<input type="text" maxlength="20" placeholder="取一个高大上的菜品名称(限制20个字符)"/>
 		</view>
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<text>烹饪小贴士</text>
 		</view>
 		<view class="peiliao-cate-name">
 			<textarea type="text" rows="15" maxlength="256" placeholder="输入介绍菜品、注意事项、菜品特色(限制256个字符)"/>
 		</view>
-		<view class="view-tips">
+		<view class="label-tips-description">
 			<text>添加菜品图片</text>
 		</view>
 		<view class="peiliao-upload-image">
@@ -209,12 +209,6 @@
 		margin: 0 4rpx;
 		padding: 0;
 	}
-	.view-tips{
-		margin-left: 10rpx;
-		margin-top: 20rpx;
-		margin-bottom: 20rpx;
-		font-size: 35rpx;
-	}
 	.peiliao-tips-container{
 		display: flex;
 		justify-content: flex-start;
@@ -294,27 +288,6 @@
 		color: #ff6a6a;
 		font-size: 30rpx;
 	}
-	.peiliao-cate-name{
-		margin-top: 20rpx;
-		margin-left: 10rpx;
-		margin-right: 10rpx;
-	}
-	.peiliao-cate-name input{
-		border: 1px solid rgba(0, 0, 0, 0.1);
-		height: 70rpx;
-		line-height: 70rpx;
-		padding: 0 4rpx;
-		border-radius: 10rpx;
-	}
-	.peiliao-cate-name textarea{
-		border: 1px solid rgba(0, 0, 0, 0.1);
-		padding: 8rpx;
-		width: 97.8%;
-		height: 280rpx;
-		font-size: 30rpx;
-		border-radius: 10rpx;
-		margin-right: 10rpx;
-	}
 	.peiliao-upload-image{
 		height: 260rpx;
 		margin-left:10rpx;
@@ -323,5 +296,24 @@
 	.peiliao-upload-image image{
 		height: 250rpx;
 		width: 250rpx;
+	}
+	.peiliao-cate-name input{
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		height: 70rpx;
+		line-height: 70rpx;
+		padding: 0 4rpx;
+		border-radius: 10rpx;
+		margin-left:10rpx;
+		margin-right:10rpx;
+	}
+	.peiliao-cate-name textarea{
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		padding: 8rpx;
+		width: 95.4%;
+		height: 280rpx;
+		font-size: 30rpx;
+		border-radius: 10rpx;
+		margin-right:10rpx;
+		margin-left: 10rpx;
 	}
 </style>
