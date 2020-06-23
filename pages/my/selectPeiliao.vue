@@ -4,7 +4,7 @@
 		<view class="make-menu-container">
 			<view class="view-tips">
 				<view class="peiliao-tips-container">
-					<text>选择配料名称、单位、填写数量</text>
+					<text>选择配料名称、用量、单位</text>
 					<text class="peiliao-tips-btn" @click="rowAdd()">添加配料</text>
 				</view>	
 			</view>
@@ -12,7 +12,7 @@
 				<view class="cell">
 					<view class="cell_line">
 						<text class="cell-row percent-left">配料名称</text>
-						<text class="cell-row percent-center">数量</text>
+						<text class="cell-row percent-center">用量</text>
 						<text class="cell-row percent-right">配料单位</text>
 						<text class="cell-row percent-handler">操作</text>
 					</view>
@@ -179,14 +179,14 @@
 			resetData : function(){
 				this.storedb.state.selfCook.listPeiliao = [];/* 选择配料,from=7 */
 			},
+			rowAdd : function(){
+				this.listInputs.push({});
+			},
 			rowRemove : function(index){
 				var _len = this.listInputs.length;
 				if(_len != 1){
 					this.listInputs.splice(index,1);
 				}
-			},
-			rowAdd : function(){
-				this.listInputs.push({});
 			},
 			changeNames : function({ newVal, oldVal, index, orignItem }) {
 				console.info(orignItem.KID);
