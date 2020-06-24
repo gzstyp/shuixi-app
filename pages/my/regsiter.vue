@@ -18,7 +18,7 @@
 				<text>商家介绍</text>
 			</view>
 			<view class="label-description-textarea">
-				<textarea type="text" rows="15" maxlength="256" placeholder="输入商家介绍,特色(限制256个字符)"/>
+				<textarea type="text" rows="15" maxlength="512" placeholder="输入商家介绍,特色(限制512个字符)"/>
 			</view>
 			<view class="label-tips-description">
 				<text>添加logo图片或商家店招</text>

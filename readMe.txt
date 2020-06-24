@@ -314,8 +314,8 @@ z-index: 66;
 	align-items: center;
 	/* width: 690rpx;
 	height: 100rpx;
-	background: rgba(255,255,255,.9);
-	box-shadow: 0 0 20rpx 0 rgba(0,0,0,.5);
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.5);
 	border-radius: 16rpx; */
 }
 .action-btn-group{

@@ -95,8 +95,19 @@
    	   padding: 8rpx;
    	   width: 97.8%;
    	   height: 280rpx;
-   	   font-size: 30rpx;
+   	   font-size: 35rpx;
+	   line-height: 35rpx;
    	   border-radius: 10rpx;
    	   margin-right: 10rpx;
+   }
+   /* 文本域本身-不带 margin-right [若最外层的 margin 0 10rpx 时使用]*/
+   .textarea-view-self{
+	   border: 1px solid rgba(0, 0, 0, 0.1);
+	   height: 280rpx;
+	   font-size: 35rpx;
+	   line-height: 35rpx;
+	   padding: 8rpx;
+	   width: 97.8%;
+	   border-radius: 10rpx;
    }
 </style>

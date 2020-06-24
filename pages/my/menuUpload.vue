@@ -11,7 +11,7 @@
 			<text>营养价值介绍</text>
 		</view>
 		<view class="menu-upload-cate-name">
-			<textarea type="text" rows="15" maxlength="256" placeholder="输入菜品的营养价值,菜品特色(限制256个字符)"/>
+			<textarea type="text" rows="15" maxlength="512" placeholder="输入菜品的营养价值,菜品特色(限制512个字符)"/>
 		</view>
 		<view class="label-tips-description">
 			<text>添加菜品图片</text>
@@ -105,7 +105,7 @@
 			<text>烹饪小贴士</text>
 		</view>
 		<view class="menu-upload-cate-name">
-			<textarea type="text" rows="15" maxlength="256" placeholder="输入烹饪小贴士,注意事项,说明……(限制256个字符)"/>
+			<textarea type="text" rows="15" maxlength="512" placeholder="输入烹饪小贴士,注意事项,说明……(限制512个字符)"/>
 		</view>
 		<view class="bottom-submit" hover-class="bottom-submit-hover">
 			<text>提交上传</text>
@@ -352,7 +352,8 @@
 		padding: 8rpx;
 		width: 97.8%;
 		height: 280rpx;
-		font-size: 30rpx;
+		font-size: 35rpx;
+		line-height: 35rpx;
 		border-radius: 10rpx;
 		margin-right: 10rpx;
 	}
