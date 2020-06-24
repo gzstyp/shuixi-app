@@ -21,6 +21,11 @@ const storedb = new Vuex.Store({
 			listQinlei : [],/* 选择禽类,from=5 */
 			listHaixian : [],/* 选择海鲜,from=6 */
 			listPeiliao : [],/* 选择配料,from=7 */
+		},
+		/* 套餐的添加-选择菜品 */
+		comboAdd : {
+			listSelect : [],//选择菜品组合
+			listPresented : []//赠送菜品
 		}
     },
     mutations : {
