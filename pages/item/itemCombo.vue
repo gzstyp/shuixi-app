@@ -91,6 +91,6 @@
 		height: 50rpx;
 		position: absolute;
 		top: -2rpx;
-		right: 0rpx;
+		right: -2rpx;
 	}
 </style>

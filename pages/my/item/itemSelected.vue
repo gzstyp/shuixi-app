@@ -118,12 +118,13 @@
 <style scoped>
 	.item-cook-root{
 		padding: 0;
-		width: 150rpx;
-		height: 186rpx;/* 150 + 34 = 186 */
+		width: 161rpx;
+		height: 186rpx;
 		position: relative;
+		padding-bottom: 4rpx;
 	}
 	.item-cook-image{
-		width: 150rpx;
+		width: 161rpx;
 		height: 150rpx;
 	}
 	.item-icon-selected{
@@ -131,12 +132,12 @@
 		height: 50rpx;
 		position: absolute;
 		top: -2rpx;
-		right: 0rpx;
+		right: -2rpx;
 	}
 	.item-icon-name{
 		font-size: 30rpx;
 		color: #000000;
-		width: 150rpx;
+		width: 161rpx;
 		height: 34rpx;
 		line-height: 34rpx;
 	}
