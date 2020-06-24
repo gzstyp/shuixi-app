@@ -63,7 +63,7 @@
 			<text>烹饪小贴士</text>
 		</view>
 		<view class="peiliao-cate-name">
-			<textarea type="text" rows="15" maxlength="512" placeholder="输入介绍菜品、注意事项、菜品特色(限制512个字符)"/>
+			<textarea type="text" rows="15" maxlength="512" placeholder="介绍菜品、注意事项、菜品特色(限制512个字符)"/>
 		</view>
 		<view class="label-tips-description">
 			<text>添加菜品图片</text>
