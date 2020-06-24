@@ -156,8 +156,11 @@
 				this.storedb.state.comboAdd.listSelect = [];
 			}
 		},
-		onLoad() {
-			this.resetData();
+		onLoad(options) {
+			var _type = options.type;//1是添加2编辑
+			if(_type === 1){
+				this.resetData();
+			}
 		}
 	}
 </script>
