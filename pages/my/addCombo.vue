@@ -11,12 +11,12 @@
 				<text>适用人数</text>
 			</view>
 			<view class="label-description-input">
-				<input type="text" maxlength="20" v-model="formData.comboCount" placeholder="输入适用人数(如:3-5)"/>
+				<input type="text" maxlength="20" v-model="formData.comboCount" placeholder="输入适用人数,如：3-5"/>
 			</view>
 			<view class="label-tips-description">
 				<text>套餐介绍</text>
 			</view>
-			<textarea type="text" maxlength="512" class="textarea-view-self" v-model="formData.comboDesc" placeholder="套餐介绍说明(限制512个字符)"/>
+			<textarea type="text" maxlength="512" class="textarea-view-self" v-model="formData.comboDesc" placeholder="输入套餐介绍说明(限制512个字符)"/>
 			<view class="label-tips-description">
 				<text>选择菜品组合</text>
 			</view>
@@ -39,7 +39,6 @@
 			</view>
 			<min-modal ref="modal"></min-modal>
 		</view>
-		<view style="margin-bottom:10rpx;height:1rpx;width:100%;"></view>
 		<view class="bottom-btn-container">
 			<view class="bottom-btn-left" hover-class="view-bottom-hover" @click="previous()">
 				<text>返回</text>
@@ -70,49 +69,49 @@
 					listPresented : []
 				},
 				listData : [
-					 {
+					{
 						"KID":"100011",
-						"CATE_IMAGE":"/static/images/realtime01.png",
+						"CATE_IMAGE":"/static/combo/combo01.png",
 						"CATENAME":"草莓水果奶油蛋糕"
-					 },
-					 {
+					},
+					{
 						"KID":"100012",
-						"CATE_IMAGE":"/static/images/realtime02.png",
+						"CATE_IMAGE":"/static/combo/combo02.png",
 						"CATENAME":"清蒸金针鱼"
-					 },
-					 {
+					},
+					{
 						"KID":"100113",
-						"CATE_IMAGE":"/static/images/realtime03.png",
+						"CATE_IMAGE":"/static/combo/combo03.png",
 						"CATENAME":"山楂银耳汤草莓"
-					 },
-					 {
+					},
+					{
 						"KID":"100014",
-						"CATE_IMAGE":"/static/images/realtime02.png",
+						"CATE_IMAGE":"/static/combo/combo04.png",
 						"CATENAME":"清蒸金针鱼"
-					 },
-					 {
+					},
+					{
 						"KID":"100115",
-						"CATE_IMAGE":"/static/images/realtime03.png",
+						"CATE_IMAGE":"/static/combo/combo05.png",
 						"CATENAME":"山楂银耳汤"
-					 }
+					}
 				],
 				listPresented : [
-					 {
+					{
 						"KID":"200011",
 						"CATE_IMAGE":"/static/images/realtime01.png",
 						"CATENAME":"草莓水果奶油蛋糕"
-					 },
-					 {
+					},
+					{
 						"KID":"200012",
 						"CATE_IMAGE":"/static/images/realtime02.png",
 						"CATENAME":"清蒸金针鱼"
-					 },
-					 {
+					},
+					{
 						"KID":"200113",
 						"CATE_IMAGE":"/static/images/realtime03.png",
 						"CATENAME":"山楂银耳汤草莓"
-					 }
-				],
+					}
+				]
 			}
 		},
 		methods:{

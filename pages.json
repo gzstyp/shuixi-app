@@ -87,7 +87,7 @@
 		{
 			"path": "pages/my/listCombo",
 			"style": {
-				"navigationBarTitleText": "套餐管理"
+				"navigationBarTitleText": "套餐列表"
 			}
 		},
 		{

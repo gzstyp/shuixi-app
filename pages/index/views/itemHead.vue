@@ -24,7 +24,9 @@
 						    url: '/pages/search/index?type='+type
 						});
 					}else{
-						hints.info(objects.label);
+						uni.navigateTo({
+						    url: '/pages/my/listCombo?from=2'
+						});
 					}
 				}else{
 					hints.info('获取数据失败');

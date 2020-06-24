@@ -65,7 +65,6 @@
 			//请求数据
 		},
 		onLoad(option){
-			//console.info(option);//接收才参数option是json格式
 			this.id = option.kid;
 		}
 	}

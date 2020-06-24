@@ -1,13 +1,19 @@
 
+不能使用 padding-left|right和margin-left|right会导致水平滚动条
+
 details,item,list,-container,detail-describe
 
 category-list-container
 category-item-container,
 
-页面跳转时 type =1是优选套餐;2是厨师精选;3实时新品;4热门菜系;5菜品分类列表
+页面跳转时 type =1是优选套餐;2是厨师精选;3实时新品;4热门菜系;5菜品分类列表;6是套餐项进入
+
+不能用方法名 @click="delete()"
 
 统一灰色：
 color: #808080;
+删除的颜色
+color: #ff6a6a;
 
 line-height(行高) x -webkit-line-clamp(行数) = height(高度);行高推荐为字体大小的基础上加2数据值
 

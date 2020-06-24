@@ -110,4 +110,21 @@
 	   width: 97.8%;
 	   border-radius: 10rpx;
    }
+   /* 底部的返回*/
+   .botton-backtrack{
+	   height:80rpx;
+	   line-height: 80rpx;
+	   width: 100%;
+	   text-align: center;
+	   background: #F19149;
+	   color: #ffffff;
+	   display: flex;
+	   justify-content: center;
+	   position:fixed;
+	   bottom:0rpx;
+	   z-index: 10;
+   }
+   .botton-backtrack-hover{
+	   color: #FEB82B;
+   }
 </style>

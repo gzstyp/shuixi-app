@@ -237,6 +237,10 @@
 			pinglunSubmit : function(){
 				
 			}
+		},
+		/* type =1是优选套餐;2是厨师精选;3实时新品;4热门菜系;5菜品分类列表;6是套餐项进入 */
+		onLoad(options){
+			console.info(options.type);
 		}
 	}
 </script>
