@@ -85,9 +85,15 @@
 			}
 		},
 		{
-			"path": "pages/my/taoCan",
+			"path": "pages/my/listCombo",
 			"style": {
 				"navigationBarTitleText": "套餐管理"
+			}
+		},
+		{
+			"path": "pages/my/addCombo",
+			"style": {
+				"navigationBarTitleText": "添加套餐"
 			}
 		},
 		{

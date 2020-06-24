@@ -53,7 +53,7 @@ const checkAuth = (callback) => {
 			} else {
 				uni.navigateTo({
 					url:'/pages/login'
-				})
+				});
 			}
 		}
 	})

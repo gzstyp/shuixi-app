@@ -147,7 +147,7 @@
 			},
 			/* 套餐管理 */
 			taoCanManager : function(){
-				this.navTo('/pages/my/taoCan');
+				this.navTo('/pages/my/listCombo');
 			}
 		}
 	}

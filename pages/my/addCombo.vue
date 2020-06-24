@@ -1,6 +1,5 @@
-<!-- 套餐管理 -->
 <template>
-	<view class="tao-can-root"></view>
+	<view class="add-combo-root"></view>
 </template>
 
 <script>
@@ -14,7 +13,7 @@
 </script>
 
 <style scoped>
-	.tao-can-root{
+	.add-combo-root{
 		margin: 0 2rpx;
 		padding: 0;
 	}
