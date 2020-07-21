@@ -26,7 +26,7 @@
 	import choiceness from './views/choiceness.vue';
 	import realtime from './views/realtime.vue';
 	import listHot from './views/listHot.vue';
-	
+
 	//引入接口url,大括号{}接收变量
 	import {httpReq} from '../../api/httpReq.js';
 	import {urls} from '../../api/urls.js';
@@ -58,11 +58,9 @@
 		methods: {
 			preference : function(){
 				var _this = this;
-				httpReq.get(urls.home.getListData,{current:1,pageSize:20}).then((data) =>{
-					_this.listPreferData = data[1].data;
-				}).catch((err) =>{
-					console.info(err);
-				});
+				//this.reqGet(urls.home.getListData,{current:1,pageSize:20},function(data){
+					//console.info(data);
+				//});
 			}
 		}
 	}

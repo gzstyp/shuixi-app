@@ -22,6 +22,7 @@
 
 <script>
 	import minModal from '../../components/min-modal/min-modal.vue';
+	import {urls} from '../../api/urls.js';
 	export default{
 		components: {
 			minModal
@@ -101,6 +102,16 @@
 				});
 			},
 			toMain(userInfo){
+				var params = {
+					OPENID : userInfo.openId,
+					NICKNAME : userInfo.nickName,
+					GENDER : userInfo.gender,
+					AVATAR : userInfo.avatarUrl,
+				}
+				this.reqPost(urls.my.register,params,function(data){
+					console.info(data);
+				});
+				return;
 				this.$store.commit('login',userInfo);
 				/**
 				 * 强制登录时使用reLaunch方式跳转过来,返回首页也使用reLaunch方式
