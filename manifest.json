@@ -1,6 +1,6 @@
 {
     "name" : "shuixi",
-    "appid" : "__UNI__AFCAD0A",
+    "appid" : "__UNI__30CA4F1",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -59,7 +59,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wx2d51dd022dffb097",
+        "appid" : "wxbf1695db9525b4ed",
         "setting" : {
             "urlCheck" : false,
             "es6" : true,
