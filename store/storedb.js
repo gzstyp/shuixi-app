@@ -9,7 +9,7 @@ const storedb = new Vuex.Store({
 			avatarUrl : '/static/icon/icon_user_photo_default.svg',
 			userName : 'yinlz',
 			nickName : "未登录",
-			shops : true ,/* 是否是商家 */
+			shops : false ,/* 是否是商家 */
 		},
 		/* 自制菜品 */
 		selfCook : {
@@ -33,7 +33,9 @@ const storedb = new Vuex.Store({
             state.userInfo.login = true;
             state.userInfo.token = provider.token;
             state.userInfo.userName = provider.userName;
+            state.userInfo.nickName = provider.nickName;
             state.userInfo.avatarUrl = provider.avatarUrl;
+            console.info(state.userInfo);
         },
         logout(state){
             state.userInfo.login = false;

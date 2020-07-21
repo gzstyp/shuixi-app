@@ -10,23 +10,10 @@
 			<view class="image-container">
 				<image class="login-image" src="/static/my/login.png"></image>
 			</view>
-			<view class="login-box-username">
-				<view class="login-box-container">
-					<view class="username-label">登录账号</view>
-					<view class="username-input"><input type="text" v-model="formLogin.username" maxlength="20"/></view>
-				</view>
-			</view>
-			<view class="login-box-password" style="margin-top: 10rpx;">
-				<view class="login-box-container">
-					<view class="password-label">登录密码</view>
-					<view class="username-input"><input type="password" v-model="formLogin.password" maxlength="20"/></view>
-				</view>
-			</view>
-			<view class="button-container" @click="loginDefault()">
-				<view class="login-button" hover-class="login-button-hover">登录</view>
-			</view>
-			<view class="weChat-container" @click="loginWeChat()">
-				<view class="weChat-button" hover-class="weChat-button-hover">微信登录</view>
+			<view style="text-align: center;margin: 30rpx 0"><text style="font-weight: bold;">选择以下应用快速登录</text></view>
+			<view class="weChat-container">
+				<image src="/static/icon/weChat.svg" class="imageIcon" @tap="loginWeChat()"></image>
+				<!--<image src="/static/icon/QQ.svg" class="imageIcon" @tap="loginQQ()"></image>-->
 			</view>
 		</view>
 		<min-modal ref="modal"></min-modal>
@@ -57,7 +44,7 @@
 				});
 			},
 			loginDefault : function(){
-				var _username = this.formLogin.username;
+				/*var _username = this.formLogin.username;
 				var _password = this.formLogin.password;
 				if(_username == null || _username.length <= 0){
 					this.dialog('请输入登录账号');
@@ -74,13 +61,57 @@
 				}else{
 					this.storedb.state.userInfo.shops = false;
 				}
-				this.storedb.state.userInfo.login = true;
+				this.storedb.state.userInfo.login = true;*/
 				uni.reLaunch({
 				    url: '/pages/my/my'
 				});
 			},
 			loginWeChat : function(){
-				
+				uni.login({
+					provider : 'weixin',
+					success : (res) => {
+						uni.getUserInfo({
+							provider : 'weixin',
+							success: (infoRes) => {
+								this.toMain(infoRes.userInfo);
+							},
+							fail(){
+								this.dialog('登陆失败');
+							}
+						});
+					},
+					fail: (err) => {
+						this.dialog('授权登录失败：' + JSON.stringify(err));
+					}
+				});
+			},
+			loginQQ : function(){
+				uni.login({
+					provider: 'qq',
+					success: function (loginRes) {
+						console.log(JSON.stringify(loginRes));
+						// 获取用户信息
+						uni.getUserInfo({
+							provider: 'qq',
+							success: function (infoRes) {
+								console.log('用户昵称为：' + infoRes.userInfo.nickName);
+							}
+						});
+					}
+				});
+			},
+			toMain(userInfo){
+				this.$store.commit('login',userInfo);
+				/**
+				 * 强制登录时使用reLaunch方式跳转过来,返回首页也使用reLaunch方式
+				 */
+				if (this.forcedLogin) {
+					uni.reLaunch({
+						url: '/pages/my/my',
+					});
+				} else {
+					uni.navigateBack();
+				}
 			}
 		},
 		created(){}
@@ -176,6 +207,11 @@
 		font-size: 40rpx;
 		height: 40rpx;
 		color: #808080;
+	}
+	.imageIcon{
+		width: 88rpx;
+		height: 88rpx;
+		/*margin: 0 10rpx;*/
 	}
 	.weChat-button-hover{
 		color: #FEB82B;

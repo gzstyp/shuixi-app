@@ -5,9 +5,9 @@
 				<view class="box">
 					<view class="box-hd">
 						<view class="avator" @click="goLogin" :hover-class="!storedb.state.userInfo.login ? 'logo-hover' : ''">
-							<image :src="userInfo.photo"></image>
+							<image :src="$store.state.userInfo.avatarUrl ? $store.state.userInfo.avatarUrl : '/static/icon/icon_user_photo_default.svg'"></image>
 						</view>
-						<view class="nick-name">{{userInfo.nickName}}</view>
+						<view class="nick-name">{{$store.state.userInfo.nickName}}</view>
 					</view>
 					<view class="box-bd">
 						<view class="item" hover-class="my-hover-class">
@@ -50,22 +50,22 @@
 					<view class="text">分享小程序</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="userInfo.shops" @click="regsiter()">
+				<view class="li" v-if="$store.state.userInfo.shops" @click="regsiter()">
 					<view class="icon"><image src="/static/icon/icon_regsiter.svg"></image></view>
 					<view class="text">商家入驻</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="userInfo.shops" @click="menuUpload()">
+				<view class="li" v-if="$store.state.userInfo.shops" @click="menuUpload()">
 					<view class="icon"><image src="/static/icon/icon_cate_upload.svg"></image></view>
 					<view class="text">菜谱上传</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="userInfo.shops" @click="selfControlMenu()">
+				<view class="li" v-if="$store.state.userInfo.shops" @click="selfControlMenu()">
 					<view class="icon"><image src="/static/icon/icon_self_control_menu.svg"></image></view>
 					<view class="text">自制菜品</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
 				</view>
-				<view class="li" v-if="userInfo.shops" @click="taoCanManager()">
+				<view class="li" v-if="$store.state.userInfo.shops" @click="taoCanManager()">
 					<view class="icon"><image src="/static/icon/icon_youxuan.svg"></image></view>
 					<view class="text">套餐管理</view>
 					<image class="to" src="/static/icon/icon_to_normal.svg"></image>
@@ -101,14 +101,11 @@
 				userInfo : {
 					photo : null,
 					nickName : null,
-					shops : false
+					shops : this.$store.state.userInfo.shops
 				}
 			}
 		},
 		onLoad(options){
-			this.userInfo.photo = this.storedb.state.userInfo.avatarUrl;
-			this.userInfo.nickName = this.storedb.state.userInfo.nickName;
-			this.userInfo.shops = this.storedb.state.userInfo.shops;
 		},
 		methods: {
 			navTo : function(url){
@@ -117,7 +114,7 @@
 				});
 			},
 			goLogin(){
-				var _login = this.storedb.state.userInfo.login;
+				var _login = this.$store.state.userInfo.login;
 				if(!_login){
 					this.login();
 				}else{
@@ -148,7 +145,8 @@
 			/* 套餐管理 */
 			taoCanManager : function(){
 				this.navTo('/pages/my/listCombo?from=1');
-			}
+			},
+			onReady() {}
 		}
 	}
 </script>
