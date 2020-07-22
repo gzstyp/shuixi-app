@@ -4,6 +4,7 @@ Vue.use(Vuex);
 const storedb = new Vuex.Store({
     state : {
 		userInfo : {
+			userId : '',
 			login : false,
 			token : '',
 			avatarUrl : '/static/icon/icon_user_photo_default.svg',
@@ -30,6 +31,7 @@ const storedb = new Vuex.Store({
     },
     mutations : {
         login(state,provider){
+            state.userInfo.userId = provider.userId;
             state.userInfo.login = true;
             state.userInfo.token = provider.token;
             state.userInfo.userName = provider.userName;
@@ -38,6 +40,7 @@ const storedb = new Vuex.Store({
             console.info(state.userInfo);
         },
         logout(state){
+            state.userInfo.userId = '';
             state.userInfo.login = false;
             state.userInfo.token = '';
             state.userInfo.userName = '';

@@ -108,11 +108,21 @@
 					GENDER : userInfo.gender,
 					AVATAR : userInfo.avatarUrl,
 				}
-				this.reqPost(urls.my.register,params,function(data){
+				this.reqPost(urls.my.register,params,(data) =>{
+                    console.info(data);
+				    if(data.code == 200){
+                        sessionStorage.setItem("accessToken",data.accessToken);
+                        sessionStorage.setItem("refreshToken",data.refreshToken);
+                        sessionStorage.setItem("userId",data.userId);
+                        sessionStorage.setItem("type",data.type);
+                        userInfo[userId] = data.userId;
+                        userInfo[shops] = data.type === 2 ? true : false;
+                        this.$store.commit('login',userInfo);
+                    }
 					console.info(data);
 				});
 				return;
-				this.$store.commit('login',userInfo);
+
 				/**
 				 * 强制登录时使用reLaunch方式跳转过来,返回首页也使用reLaunch方式
 				 */
