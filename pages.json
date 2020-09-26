@@ -147,19 +147,19 @@
 		"list":[
 			{
 				"pagePath":"pages/index/index",
-				"iconPath":"./static/tab/index.png",
+				"iconPath":"static/tab/index.png",
 				"selectedIconPath":"static/tab/index_selected.png",
 				"text":"首页"
 			},
 			{
 				"pagePath":"pages/profile/profile",
-				"iconPath":"./static/tab/profile.png",
+				"iconPath":"static/tab/profile.png",
 				"selectedIconPath":"static/tab/profile-selected.png",
 				"text":"水西天香"
 			},
 			{
 				"pagePath":"pages/my/my",
-				"iconPath":"./static/tab/my.png",
+				"iconPath":"static/tab/my.png",
 				"selectedIconPath":"static/tab/my-selected.png",
 				"text":"我的"
 			}
